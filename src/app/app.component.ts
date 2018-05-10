@@ -1,10 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component, ViewChild} from '@angular/core';
+import {Nav, Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ConditionsPage } from '../pages/conditions/conditions';
+import {HomePage} from '../pages/home/home';
+import {ConditionsPage} from '../pages/conditions/conditions';
+import {ResistancesPage} from '../pages/resistances/resistances';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +24,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Conditions', component: ConditionsPage }
+      { title: 'Conditions', component: ConditionsPage },
+      { title: 'Resistances', component: ResistancesPage }
     ];
 
   }
