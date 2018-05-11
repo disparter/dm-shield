@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ConditionsPage } from '../pages/conditions/conditions';
 import { ResistancesPage } from '../pages/resistances/resistances';
+import { LicensePage } from '../pages/license/license';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     ConditionsPage,
-    ResistancesPage
+    ResistancesPage,
+    LicensePage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     ConditionsPage,
-    ResistancesPage
+    ResistancesPage,
+    LicensePage
   ],
   providers: [
     StatusBar,
