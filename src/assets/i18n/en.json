@@ -1,0 +1,14 @@
+{
+  "MENU": {
+    "HOME"        : "Home",
+    "CONDITIONS"  : "Conditions",
+    "RESISTANCES" : "Resistances",
+    "LICENSE"     : "License"
+  },
+  "HOME": {
+    "LANGUAGE" : "Language",
+    "WELCOME"  : "Welcome! This a beta version, check the left menu for information already developed.",
+    "APPNAME"  : "DM's Shield",
+    "TITLE"    : "HOME"
+  }
+}

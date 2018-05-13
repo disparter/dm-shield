@@ -3,13 +3,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>{{ 'HOME.TITLE' | translate }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>DM`s Shield</h3>
+  <h3>{{ 'HOME.APPNAME' | translate }}</h3>
 
-  <p>Welcome! This a beta version, check the left menu for information already developed.</p>
+  <p>{{ 'HOME.WELCOME' | translate }}</p>
+
+  <ion-list>
+    <ion-item-group radio-group (ionChange)="applyLanguage()" [(ngModel)]="selectedLanguage">
+      <ion-item-divider color="light">{{ 'HOME.LANGUAGE' | translate }}</ion-item-divider>
+      <ion-item *ngFor="let lang of languages">
+        <ion-label>{{lang.name}}</ion-label>
+        <ion-radio [value]="lang.code"></ion-radio>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
 
 </ion-content>

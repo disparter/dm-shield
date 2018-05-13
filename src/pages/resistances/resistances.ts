@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 import { ResistancesProvider } from './resistances-provider';
 
 

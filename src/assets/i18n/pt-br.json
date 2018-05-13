@@ -1,0 +1,14 @@
+{
+  "MENU": {
+    "HOME"        : "Início",
+    "CONDITIONS"  : "Condições",
+    "RESISTANCES" : "Resistências",
+    "LICENSE"     : "Licença"
+  },
+  "HOME": {
+    "LANGUAGE" : "Idioma",
+    "WELCOME"  : "Bem vindo! Esta é uma versão beta ainda, verifique o menu lateral para informações que já foram desenvolvidas.",
+    "APPNAME"  : "Escudo do Mestre",
+    "TITLE"    : "Início"
+  }
+}
