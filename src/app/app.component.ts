@@ -11,7 +11,7 @@ import {HomePage} from '../pages/home/home';
 import {ConditionsPage} from '../pages/conditions/conditions';
 import {ResistancesPage} from '../pages/resistances/resistances';
 import {LicensePage} from '../pages/license/license';
-import {defaultLanguage, sysOptions} from '../pages/home/home.constants';
+import {defaultLanguage} from '../pages/home/home.constants';
 
 @Component({
   templateUrl: 'app.html'
