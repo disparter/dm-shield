@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 
 
 @NgModule({
@@ -20,12 +21,13 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     ConditionsPage,
     ResistancesPage,
-    LicensePage
+    LicensePage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
+    NgHttpLoaderModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,12 +35,12 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     ConditionsPage,
     ResistancesPage,
-    LicensePage
+    LicensePage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}
