@@ -3,7 +3,7 @@
     <name>dmShield</name>
     <description>An app to index important information about 5e Dungeons and Dragons Edition. Like the DM Shield.</description>
     <author email="felipe.a.b.faria@gmail.com" href="http://github.com/disparter">Felipe Faria - Disparter</author>
-    <content src="index.html" />g
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
