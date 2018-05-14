@@ -9,7 +9,7 @@ import {Globalization} from "@ionic-native/globalization";
 
 import {HomePage} from '../pages/home/home';
 import {ConditionsPage} from '../pages/conditions/conditions';
-import {ResistancesPage} from '../pages/resistances/resistances';
+import {DamagesPage} from '../pages/damages/damages';
 import {LicensePage} from '../pages/license/license';
 import {defaultLanguage} from '../pages/home/home.constants';
 
@@ -30,7 +30,7 @@ export class MyApp {
     this.pages = [
       {title: 'MENU.HOME', component: HomePage},
       {title: 'MENU.CONDITIONS', component: ConditionsPage},
-      {title: 'MENU.RESISTANCES', component: ResistancesPage},
+      {title: 'MENU.DAMAGES', component: DamagesPage},
       {title: 'MENU.LICENSE', component: LicensePage}
     ];
 

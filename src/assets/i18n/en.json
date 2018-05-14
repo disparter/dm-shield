@@ -1,9 +1,9 @@
 {
   "MENU": {
-    "HOME"        : "Home",
-    "CONDITIONS"  : "Conditions",
-    "RESISTANCES" : "Resistances",
-    "LICENSE"     : "License"
+    "HOME"       : "Home",
+    "CONDITIONS" : "Conditions",
+    "DAMAGES"    : "Damage Types",
+    "LICENSE"    : "License"
   },
   "HOME": {
     "LANGUAGE" : "Language",

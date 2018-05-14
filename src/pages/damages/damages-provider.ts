@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class ResistancesProvider {
+export class DamagesProvider {
   private API_URL = 'https://ddnext-apis.herokuapp.com/v1/resistances';
 
   constructor(public http: HttpClient) { }
 
-  public getResistances() {
+  public getTypes() {
     return new Promise((resolve, reject) => {
       this.http.get(this.API_URL)
         .subscribe((result: any) => {

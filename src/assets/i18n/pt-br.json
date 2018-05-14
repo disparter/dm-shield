@@ -2,7 +2,7 @@
   "MENU": {
     "HOME"        : "Início",
     "CONDITIONS"  : "Condições",
-    "RESISTANCES" : "Resistências",
+    "DAMAGES"     : "Tipos de Dano",
     "LICENSE"     : "Licença"
   },
   "HOME": {

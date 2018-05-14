@@ -5,7 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ConditionsPage } from '../pages/conditions/conditions';
-import { ResistancesPage } from '../pages/resistances/resistances';
+import { DamagesPage } from '../pages/damages/damages';
 import { LicensePage } from '../pages/license/license';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,7 +30,7 @@ export function createTranslateLoader(http: HttpClient) {
     MyApp,
     HomePage,
     ConditionsPage,
-    ResistancesPage,
+    DamagesPage,
     LicensePage,
   ],
   imports: [
@@ -55,7 +55,7 @@ export function createTranslateLoader(http: HttpClient) {
     MyApp,
     HomePage,
     ConditionsPage,
-    ResistancesPage,
+    DamagesPage,
     LicensePage,
   ],
   providers: [

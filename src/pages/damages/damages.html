@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'MENU.DAMAGES' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      {{item.name}}
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    <b>{{selectedItem.description}}</b>
+  </div>
+</ion-content>
