@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 import { TranslateService } from '@ngx-translate/core';
-import { availableLanguages } from './home.constants';
+import { availableLanguages } from '../../constants/language.constants';
 
 import { Storage } from '@ionic/storage';
+import { RequestProvider } from "../../providers/request/request.provider";
 
 @Component({
   selector: 'page-home',
@@ -17,7 +18,7 @@ export class HomePage {
 
   private translate: TranslateService;
 
-  constructor(translate: TranslateService, private storage: Storage) {
+  constructor(translate: TranslateService, private storage: Storage, private requestProvider: RequestProvider) {
     this.translate = translate;
     this.storage.get('language').then(value => {
       this.selectedLanguage = value;
@@ -27,6 +28,7 @@ export class HomePage {
   applyLanguage() {
     this.storage.set('language', this.selectedLanguage).then(value => {
       this.translate.use(this.selectedLanguage);
+      this.requestProvider.setAcceptLanguage(this.selectedLanguage);
     });
   }
 

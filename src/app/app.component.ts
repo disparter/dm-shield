@@ -11,7 +11,8 @@ import {HomePage} from '../pages/home/home';
 import {ConditionsPage} from '../pages/conditions/conditions';
 import {DamagesPage} from '../pages/damages/damages';
 import {LicensePage} from '../pages/license/license';
-import {defaultLanguage} from '../pages/home/home.constants';
+import {defaultLanguage} from '../constants/language.constants';
+import {RequestProvider} from "../providers/request/request.provider";
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +25,8 @@ export class MyApp {
   pages: Array<{ title: any, component: any }>;
 
   constructor(private translate: TranslateService, public platform: Platform, public statusBar: StatusBar,
-              public splashScreen: SplashScreen, private storage: Storage, private globalization: Globalization) {
+              public splashScreen: SplashScreen, private storage: Storage, private globalization: Globalization,
+              private requestProvider: RequestProvider) {
     this.initializeApp();
 
     this.pages = [
@@ -53,19 +55,22 @@ export class MyApp {
   }
 
   initTranslate() {
+    let language = defaultLanguage;
     // Set the default language for translation strings, and the current language.
     this.translate.setDefaultLang(defaultLanguage);
 
     this.storage.get('language').then(value => {
       if(value){
-        this.translate.use(value);
+        language = value;
       }else if (this.translate.getBrowserLang() !== undefined) {
-        this.translate.use(this.translate.getBrowserLang());
+        language = this.translate.getBrowserLang();
       } else if ((<any>window).cordova) {
         this.globalization.getPreferredLanguage().then(result => {
-          this.translate.use(result.value);
+          language = result.value;
         });
       }
+      this.translate.use(language);
+      this.requestProvider.setAcceptLanguage(language);
     });
   }
 }

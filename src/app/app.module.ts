@@ -20,6 +20,7 @@ import { TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { Globalization} from "@ionic-native/globalization";
 
 import { IonicStorageModule } from '@ionic/storage';
+import { RequestProvider } from "../providers/request/request.provider";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -63,6 +64,7 @@ export function createTranslateLoader(http: HttpClient) {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Globalization,
+    RequestProvider,
   ]
 })
 export class AppModule {}
