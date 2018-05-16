@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title *ngIf="!selectedItem" >{{'MENU.CONDITIONS' | translate}}</ion-title>
+    <ion-title *ngIf="!selectedItem" >{{'MENU.MONSTER-TYPES' | translate}}</ion-title>
     <ion-title *ngIf="selectedItem" >{{selectedItem.name}}</ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,6 +15,6 @@
     </button>
   </ion-list>
   <div *ngIf="selectedItem" padding>
-     <b>{{selectedItem.description}}</b>
+    <b>{{selectedItem.description}}</b>
   </div>
 </ion-content>

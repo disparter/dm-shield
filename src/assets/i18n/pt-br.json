@@ -1,9 +1,10 @@
 {
   "MENU": {
-    "HOME"        : "Início",
-    "CONDITIONS"  : "Condições",
-    "DAMAGES"     : "Tipos de Dano",
-    "LICENSE"     : "Licença"
+    "HOME"          : "Início",
+    "CONDITIONS"    : "Condições",
+    "DAMAGES"       : "Tipos de Dano",
+    "LICENSE"       : "Licença",
+    "MONSTER-TYPES" : "Tipos de Monstros"
   },
   "HOME": {
     "LANGUAGE" : "Idioma",

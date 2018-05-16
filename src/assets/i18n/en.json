@@ -1,9 +1,10 @@
 {
   "MENU": {
-    "HOME"       : "Home",
-    "CONDITIONS" : "Conditions",
-    "DAMAGES"    : "Damage Types",
-    "LICENSE"    : "License"
+    "HOME"          : "Home",
+    "CONDITIONS"    : "Conditions",
+    "DAMAGES"       : "Damage Types",
+    "LICENSE"       : "License",
+    "MONSTER-TYPES" : "Monster Types"
   },
   "HOME": {
     "LANGUAGE" : "Language",

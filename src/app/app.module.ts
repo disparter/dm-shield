@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ConditionsPage } from '../pages/conditions/conditions';
 import { DamagesPage } from '../pages/damages/damages';
 import { LicensePage } from '../pages/license/license';
+import { MonsterTypePage } from '../pages/monster-types/monster-types';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,6 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
     ConditionsPage,
     DamagesPage,
     LicensePage,
+    MonsterTypePage,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ export function createTranslateLoader(http: HttpClient) {
     ConditionsPage,
     DamagesPage,
     LicensePage,
+    MonsterTypePage,
   ],
   providers: [
     StatusBar,

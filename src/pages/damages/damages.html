@@ -3,12 +3,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{'MENU.DAMAGES' | translate}}</ion-title>
+    <ion-title *ngIf="!selectedItem" >{{'MENU.DAMAGES' | translate}}</ion-title>
+    <ion-title *ngIf="selectedItem" >{{selectedItem.name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list *ngIf="!selectedItem">
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       {{item.name}}
     </button>
