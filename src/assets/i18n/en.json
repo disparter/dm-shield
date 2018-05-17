@@ -4,7 +4,8 @@
     "CONDITIONS"    : "Conditions",
     "DAMAGES"       : "Damage Types",
     "LICENSE"       : "License",
-    "MONSTER-TYPES" : "Monster Types"
+    "MONSTER-TYPES" : "Monster Types",
+    "SKILL-TYPES"   : "Skills"
   },
   "HOME": {
     "LANGUAGE" : "Language",

@@ -4,7 +4,8 @@
     "CONDITIONS"    : "Condições",
     "DAMAGES"       : "Tipos de Dano",
     "LICENSE"       : "Licença",
-    "MONSTER-TYPES" : "Tipos de Monstros"
+    "MONSTER-TYPES" : "Tipos de Monstros",
+    "SKILL-TYPES"   : "Perícias"
   },
   "HOME": {
     "LANGUAGE" : "Idioma",
