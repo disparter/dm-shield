@@ -1,6 +1,6 @@
 {
-  "name": "dmShield",
-  "version": "0.0.3",
+  "name": "DM's Shield",
+  "version": "0.0.4",
   "author": "Felipe Faria - Disparter",
   "homepage": "http://github.com/disparter",
   "private": true,
@@ -28,6 +28,7 @@
     "@ionic/storage": "^2.1.3",
     "@ngx-translate/core": "^9.x",
     "@ngx-translate/http-loader": "^2.x",
+    "cordova": "8.0.0",
     "cordova-android": "7.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-globalization": "^1.11.0",

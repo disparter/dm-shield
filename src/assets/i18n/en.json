@@ -5,11 +5,12 @@
     "DAMAGES"       : "Damage Types",
     "LICENSE"       : "License",
     "MONSTER-TYPES" : "Monster Types",
+    "SENSE-TYPES"   : "Senses",
     "SKILL-TYPES"   : "Skills"
   },
   "HOME": {
     "LANGUAGE" : "Language",
-    "WELCOME"  : "Welcome! This a beta version, check the left menu for information already developed.",
+    "WELCOME"  : "Welcome! This a beta version, check the left menu for the pieces of information already developed.",
     "APPNAME"  : "DM's Shield",
     "TITLE"    : "HOME"
   }

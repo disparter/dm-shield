@@ -13,6 +13,7 @@ import {DamagesPage} from '../pages/damages/damages';
 import {LicensePage} from '../pages/license/license';
 import {MonsterTypePage} from '../pages/monster-types/monster-types';
 import {SkillTypePage} from "../pages/skill-types/skill-types";
+import {SenseTypePage} from "../pages/senses-types/sense-types";
 
 import {defaultLanguage} from '../constants/language.constants';
 import {RequestProvider} from "../providers/request/request.provider";
@@ -38,6 +39,7 @@ export class MyApp {
       {title: 'MENU.DAMAGES', component: DamagesPage},
       {title: 'MENU.MONSTER-TYPES', component: MonsterTypePage},
       {title: 'MENU.SKILL-TYPES', component: SkillTypePage},
+      {title: 'MENU.SENSE-TYPES', component: SenseTypePage},
       {title: 'MENU.LICENSE', component: LicensePage}
     ];
   }

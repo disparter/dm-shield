@@ -1,6 +1,6 @@
 {
-  "name": "dmShield",
-  "app_id": "",
+  "name": "DM's Shield",
+  "app_id": "com.github.disparter.dm_shield",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
