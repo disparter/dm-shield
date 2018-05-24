@@ -1,5 +1,4 @@
-sudo: false
-dist: trusty
+os: osx
 language: android
 jdk: oraclejdk8
 android:
@@ -8,16 +7,10 @@ android:
     - build-tools
 before_install:
 - export LANG=en_US.UTF-8
-- nvm install v7.10.1
+- nvm install v8.10.1
 - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in dm-shield.keystore.enc -out dm-shield.keystore -d
 script:
-- npm cache clean
-- rm -rf node_modules/
-- npm install npm@4.2.0
 - npm install -g ionic cordova
-- npm install @ionic/app-scripts@latest
-- npm install @angular/core@latest
-- npm install ionic-angular@latest
 - npm install
 - ionic cordova build android --release
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
