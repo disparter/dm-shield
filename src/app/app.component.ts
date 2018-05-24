@@ -17,6 +17,7 @@ import {SenseTypePage} from "../pages/senses-types/sense-types";
 
 import {defaultLanguage} from '../constants/language.constants';
 import {RequestProvider} from "../providers/request/request.provider";
+import {LanguageTypePage} from "../pages/language-types/language-types";
 
 @Component({
   templateUrl: 'app.html'
@@ -40,6 +41,7 @@ export class MyApp {
       {title: 'MENU.MONSTER-TYPES', component: MonsterTypePage},
       {title: 'MENU.SKILL-TYPES', component: SkillTypePage},
       {title: 'MENU.SENSE-TYPES', component: SenseTypePage},
+      {title: 'MENU.LANGUAGE-TYPES', component: LanguageTypePage},
       {title: 'MENU.LICENSE', component: LicensePage}
     ];
   }

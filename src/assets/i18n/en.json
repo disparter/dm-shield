@@ -1,12 +1,13 @@
 {
   "MENU": {
-    "HOME"          : "Home",
-    "CONDITIONS"    : "Conditions",
-    "DAMAGES"       : "Damage Types",
-    "LICENSE"       : "License",
-    "MONSTER-TYPES" : "Monster Types",
-    "SENSE-TYPES"   : "Senses",
-    "SKILL-TYPES"   : "Skills"
+    "HOME"           : "Home",
+    "CONDITIONS"     : "Conditions",
+    "DAMAGES"        : "Damage Types",
+    "LICENSE"        : "License",
+    "MONSTER-TYPES"  : "Monster Types",
+    "SENSE-TYPES"    : "Senses",
+    "LANGUAGE-TYPES" : "Languages",
+    "SKILL-TYPES"    : "Skills"
   },
   "HOME": {
     "LANGUAGE" : "Language",

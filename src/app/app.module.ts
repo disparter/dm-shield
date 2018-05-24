@@ -10,6 +10,7 @@ import { LicensePage } from '../pages/license/license';
 import { MonsterTypePage } from '../pages/monster-types/monster-types';
 import { SkillTypePage } from "../pages/skill-types/skill-types";
 import { SenseTypePage } from "../pages/senses-types/sense-types";
+import { LanguageTypePage } from "../pages/language-types/language-types";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -39,6 +40,7 @@ export function createTranslateLoader(http: HttpClient) {
     MonsterTypePage,
     SkillTypePage,
     SenseTypePage,
+    LanguageTypePage,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +69,7 @@ export function createTranslateLoader(http: HttpClient) {
     MonsterTypePage,
     SkillTypePage,
     SenseTypePage,
+    LanguageTypePage,
   ],
   providers: [
     StatusBar,

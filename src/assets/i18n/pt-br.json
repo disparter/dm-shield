@@ -1,12 +1,13 @@
 {
   "MENU": {
-    "HOME"          : "Início",
-    "CONDITIONS"    : "Condições",
-    "DAMAGES"       : "Tipos de Dano",
-    "LICENSE"       : "Licença",
-    "MONSTER-TYPES" : "Tipos de Monstros",
-    "SENSE-TYPES"   : "Sentidos",
-    "SKILL-TYPES"   : "Perícias"
+    "HOME"           : "Início",
+    "CONDITIONS"     : "Condições",
+    "DAMAGES"        : "Tipos de Dano",
+    "LICENSE"        : "Licença",
+    "MONSTER-TYPES"  : "Tipos de Monstros",
+    "SENSE-TYPES"    : "Sentidos",
+    "LANGUAGE-TYPES" : "Idiomas",
+    "SKILL-TYPES"    : "Perícias"
   },
   "HOME": {
     "LANGUAGE" : "Idioma",
