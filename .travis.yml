@@ -6,6 +6,9 @@ dist: trusty
 
 matrix:
   include:
+    - language: node_js
+          node_js:
+           - "8"
     - language: android
       jdk: oraclejdk8
       android:
