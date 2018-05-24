@@ -1,8 +1,10 @@
-sudo: required
 language: node_js
+node_js:
+ - "8"
+sudo: true
+dist: trusty
 before_install:
 - export LANG=en_US.UTF-8
-- npm install -g npm@5.6.0
 - npm install -g cordova ionic
 - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in dm-shield.keystore.enc -out dm-shield.keystore -d
 script:
