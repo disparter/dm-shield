@@ -3,13 +3,23 @@ node_js:
  - "8"
 sudo: true
 dist: trusty
+
+matrix:
+  include:
+    - language: android
+      jdk: oraclejdk8
+      android:
+        components:
+          - tools
+          - build-tools
+
 before_install:
 - export LANG=en_US.UTF-8
 - npm install -g cordova ionic
 - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in dm-shield.keystore.enc -out dm-shield.keystore -d
 script:
 - npm install
-- ionic build cordova android --release
+- ionic cordova build android --release
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg
   SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
   MY_KEYSTORE_ALIAS
@@ -20,3 +30,4 @@ env:
   global:
   - secure: Su5CSRnNCtlfu4S5v6L22eF72Htuuh++YE+o9E8ERZORToFdjnb8da9ZtuJnxPYas3kX1ioWar93Etg5SyIAxfCvTSkWM1/FoWVgcZcZ99QkxIwgNqqTCZCHBBzG/6OYSPhb0BOUCjorPnlcHedw3ll1tQgXO6pfdkFDvxgLv3xkBpwUhqROxbRDr3BxN+fgGWlshtHF3mKkO9hKbhfP6BGO3CfgXTgtauYJG42AqFHYfj08TKve8/xAYWLSo0Cd9hx1mGvlWs8Ja8dAf6Y+sICdXPgyWAZB08XyJCc9dIjUY0OIVbbsstNiXyD0UiLcl65PbfHZcZAVfJj813l3C8GVawYyKMO6ArvnmXUIQZ9CkgopbmEVWKX8EOsGGPZdkNw9wc38wE0ojhQPuAuMPniIMc80YtxhuHaEyFNo2UcD7i2k9wBQhBJdFQIgteXEvdFedeIMJF9nOd8MD80dcttGZEGUcioV8tv/dioiVipgODfKGbgSByc5f748x4Gi0pz20znhBSl950byw0aI9Hrc7B5agQ6EaW+LbzngW51Pz6aAn2B1QJ/MG6NiFkB0Q9f5nfqEk5edI1o1rrY2MetxpjiputQoDLtEqrkkPM0+Uynm2Sw0BZBDA5f0j3luykNYVo8lINDNaVjjNSU3KZgXtB9kYi+RLxWCI9tL8oE=
   - secure: K6xCSoF0grDPkNMTLJGTnPfLAJ8o9pv1eozJ5g8PQzDZlT1aYF+PYRSFwxyhcnK11+ti7AFvMouyV0Lp4YCluxmoVrVHqq7CsCdQePRjYs5i1ShMT4drPVFi6YLvg5j2tB44V0JSvd+O84HF+HCI/QhYp+pE5t91EH5c6Q6jsN34OaCi3QD03ckRqrDF5OAnqr98E5WqmyguQr+WY1uazyvTkJ/5tH1kUUQS/nQ2Yyz07IBPq90RkIeA63tL/MD8z9axz9G1hStiE9MCRXkLA8oXfnbjcSn9G4fAS7EwRMvMkWn32HCOARjkumdBZWv0MDhju5r9jqqUghmcWd8cU0YEbNefV4RSyxVMjVDfz0uxd5yl3IEHlL9nAJO0I1dEfnuWGi7MvZz8HBt+PonL4yBMX2E5SjdqG3KN2qN+ZOPaWbtFMDbTKRD/vz/DRJI3eNRQtrP6o1gz7Ko7O4ph6tj/evinU0fSOccbOpD4gTyZ6I+iyyZXH2UsYTf9GajbumXZuUes7dwiKlOCWBRicF3AgNmxYTBrEaTQGCkHtj+0PmqQJCRKtFBQwDduXfBxFRA34AqNhe6+rkSaSmY2V7Up9AZ7duqyC6zNUT02VxS4foviqdmV9kKTtwEW93Im6fEuQYeFbKAgRD0KPotOiPfWqA9PzEH30zOCk2NceCA=
+
