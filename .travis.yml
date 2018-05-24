@@ -1,4 +1,4 @@
-sudo: true
+sudo: false
 language: android
 jdk: oraclejdk8
 android:
@@ -13,7 +13,7 @@ script:
 - npm cache clean
 - rm -rf node_modules/
 - npm install npm@4.2.0
-- npm install -g ionic@beta cordova
+- npm install -g ionic cordova
 - npm install
 - ionic cordova build android --release
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
