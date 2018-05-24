@@ -6,11 +6,11 @@ npm install -g cordova ionic
 
 chmod 777 node_modules
 
-ionic info
-
 # build Android and iOS packages
+ionic cordova platform remove android
+ionic cordova platform add android
+ionic info
 ionic cordova build android --release
-
 # - cordova build ios --device --release
 
 #sign
