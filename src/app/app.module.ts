@@ -11,6 +11,7 @@ import { MonsterTypePage } from '../pages/monster-types/monster-types';
 import { SkillTypePage } from "../pages/skill-types/skill-types";
 import { SenseTypePage } from "../pages/senses-types/sense-types";
 import { LanguageTypePage } from "../pages/language-types/language-types";
+import { AlignmentsPage } from "../pages/alignments/alignments";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -41,6 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     SkillTypePage,
     SenseTypePage,
     LanguageTypePage,
+    AlignmentsPage,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +72,7 @@ export function createTranslateLoader(http: HttpClient) {
     SkillTypePage,
     SenseTypePage,
     LanguageTypePage,
+    AlignmentsPage,
   ],
   providers: [
     StatusBar,

@@ -14,10 +14,11 @@ import {LicensePage} from '../pages/license/license';
 import {MonsterTypePage} from '../pages/monster-types/monster-types';
 import {SkillTypePage} from "../pages/skill-types/skill-types";
 import {SenseTypePage} from "../pages/senses-types/sense-types";
+import {LanguageTypePage} from "../pages/language-types/language-types";
+import {AlignmentsPage} from "../pages/alignments/alignments";
 
 import {defaultLanguage} from '../constants/language.constants';
 import {RequestProvider} from "../providers/request/request.provider";
-import {LanguageTypePage} from "../pages/language-types/language-types";
 
 @Component({
   templateUrl: 'app.html'
@@ -42,6 +43,7 @@ export class MyApp {
       {title: 'MENU.SKILL-TYPES', component: SkillTypePage},
       {title: 'MENU.SENSE-TYPES', component: SenseTypePage},
       {title: 'MENU.LANGUAGE-TYPES', component: LanguageTypePage},
+      {title: 'MENU.ALIGNMENTS', component: AlignmentsPage},
       {title: 'MENU.LICENSE', component: LicensePage}
     ];
   }
