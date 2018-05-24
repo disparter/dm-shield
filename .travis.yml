@@ -16,6 +16,7 @@ script:
 - npm install npm@4.2.0
 - npm install -g ionic cordova
 - npm install @ionic/app-scripts@latest
+- npm install @angular/core@latest
 - npm install ionic-angular@latest
 - npm install
 - ionic cordova build android --release
