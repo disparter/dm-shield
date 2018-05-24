@@ -1,0 +1,8 @@
+language: android
+android:
+  components:
+  - tools
+  - platform-tools
+before_install:
+- openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv
+  -in dm-shield.keystore.enc -out dm-shield.keystore -d
