@@ -1,11 +1,10 @@
 sudo: true
 language: android
 jdk: oraclejdk8
-      android:
-        components:
-          - tools
-          - build-tools
-
+android:
+  components:
+    - tools
+    - build-tools
 before_install:
 - export LANG=en_US.UTF-8
 - nvm install node
