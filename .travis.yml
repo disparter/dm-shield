@@ -1,14 +1,11 @@
-language: android
-android:
-  components:
-  - tools
-  - platform-tools
+sudo: required
+language: node_js
 before_install:
 - export LANG=en_US.UTF-8
-- npm install -g ionic
-- npm install -g cordova
+- npm install -g cordova ionic
 - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in dm-shield.keystore.enc -out dm-shield.keystore -d
 script:
+- npm install
 - ionic build cordova android --release
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg
   SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
