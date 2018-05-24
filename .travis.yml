@@ -12,7 +12,8 @@ before_install:
 script:
 - rm -rf node_modules/
 - npm install npm@5.6.0
-- npm install -g cordova ionic
+- npm install cordova ionic
+- npm install -g cordova-cli ionic-cli
 - npm install
 - ionic cordova build android --release
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg
