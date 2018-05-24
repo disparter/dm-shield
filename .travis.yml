@@ -8,9 +8,10 @@ android:
 before_install:
 - export LANG=en_US.UTF-8
 - nvm install node
-- npm install -g cordova ionic
 - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in dm-shield.keystore.enc -out dm-shield.keystore -d
 script:
+- rm -rf node_modules/
+- npm install -g cordova ionic
 - npm install
 - ionic cordova build android --release
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg
