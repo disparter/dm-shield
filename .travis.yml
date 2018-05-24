@@ -18,7 +18,7 @@ script:
 - ionic cordova build android --release
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg
   SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
-  MY_KEYSTORE_ALIAS
+  dm-shield
 - zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
   platforms/android/app/build/outputs/apk/release/app-release-signed.apk
 - supply run -j platforms/android/gapi.json -p com.github.disparter.dm_shield -b platforms/android/app/build/outputs/apk/release/app-release-signed.apk
