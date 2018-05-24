@@ -12,6 +12,23 @@ before_install:
 script:
 - npm install -g ionic cordova
 - ionic cordova build android --release
+- npm install @angular/animations@latest
+- npm install @angular/common@latest
+- npm install @angular/compiler@latest
+- npm install @angular/compiler-cli@latest
+- npm install @angular/core@latest
+- npm install @angular/forms@latest
+- npm install @angular/http@latest
+- npm install @angular/platform-browser@latest
+- npm install @angular/platform-browser-dynamic@latest
+- npm install @ionic-native/core@latest
+- npm install @ionic-native/globalization@latest
+- npm install @ionic-native/splash-screen@latest
+- npm install @ionic-native/status-bar@latest
+- npm install @ionic/storage@latest
+- npm install @ngx-translate/core@latest
+- npm install @ngx-translate/http-loader@latest
+- npm install
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
 - zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk platforms/android/app/build/outputs/apk/release/app-release-signed.apk
 - supply run -j platforms/android/gapi.json -p com.github.disparter.dm_shield -b platforms/android/app/build/outputs/apk/release/app-release-signed.apk
