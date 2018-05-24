@@ -12,15 +12,12 @@ before_install:
 script:
 - rm -rf node_modules/
 - npm install npm@5.6.0
-- npm install cordova ionic
-- npm install -g cordova-cli ionic-cli
+- npm install ionic cordova
+- npm install -g ionic cordova
 - npm install
 - ionic cordova build android --release
-- jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg
-  SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
-  dm-shield-key
-- zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
-  platforms/android/app/build/outputs/apk/release/app-release-signed.apk
+- jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
+- zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk platforms/android/app/build/outputs/apk/release/app-release-signed.apk
 - supply run -j platforms/android/gapi.json -p com.github.disparter.dm_shield -b platforms/android/app/build/outputs/apk/release/app-release-signed.apk
 env:
   global:
