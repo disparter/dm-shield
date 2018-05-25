@@ -40,7 +40,7 @@ script:
   - npm install -g cordova ionic
 
   # build Android and iOS packages
-  - cordova build android --release
+  - ionic cordova build android --release
   # - ionic cordova build ios --device --release
 
 cache:
