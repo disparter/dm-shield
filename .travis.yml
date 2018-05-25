@@ -14,7 +14,7 @@ env:
 before_install:
   - export LANG=en_US.UTF-8
   - brew update
-  - npm install -g npm@8.11.2
+  - nvm use 8.11.2
 
 install:
     # install android SDK
