@@ -28,6 +28,7 @@ script:
 - npm install @ionic/storage@latest
 - npm install @ngx-translate/core@latest
 - npm install @ngx-translate/http-loader@latest
+- npm install @ionic/app-scripts@latest
 - npm install
 - ionic cordova build android --release
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
