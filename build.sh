@@ -1,8 +1,10 @@
 #!/bin/sh
-cd $TRAVIS_BUILD_DIR/dm-shield
+cd $TRAVIS_BUILD_DIR
 
 # install build dependecies
 npm install -g cordova ionic
+
+chmod 777 node_modules
 
 # build Android and iOS packages
 ionic cordova build android --release
