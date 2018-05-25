@@ -18,6 +18,7 @@ before_install:
 
 install:
     - nvm use 8.11.2
+    - npm install -g npm
 
     # install android SDK
     -  wget http://dl.google.com/android/android-sdk_r24.4-macosx.zip
@@ -39,11 +40,11 @@ cache:
 
 script:
   # install build dependecies
-  - sudo npm install -g cordova ionic
+  - npm install -g cordova ionic
 
   # build Android and iOS packages
-  - sudo ionic cordova build android --release
-  # - ionio cordova build ios --device --release
+  - ionic cordova build android --release
+  # - ionic cordova build ios --device --release
 
 after_success:
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
