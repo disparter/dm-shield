@@ -51,14 +51,9 @@ script:
 
   # build Android and iOS packages
   - cordova build android --release
- # - cordova build ios --device --release
+  # - cordova build ios --device --release
 
 after_success:
-  # generate documentation
-  # - gulp doc
-
-deploy:
-  # deploy build to s3, testflight etc.
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
 - zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk platforms/android/app/build/outputs/apk/release/app-release-signed.apk
 - supply run -j platforms/android/gapi.json -p com.github.disparter.dm_shield -b platforms/android/app/build/outputs/apk/release/app-release-signed.apk
