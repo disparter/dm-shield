@@ -14,9 +14,11 @@ env:
 before_install:
   - export LANG=en_US.UTF-8
   - brew update
-  - nvm use 8.11.2
+  - nvm install v8.11.2
 
 install:
+    - nvm use 8.11.2
+
     # install android SDK
     -  wget http://dl.google.com/android/android-sdk_r24.4-macosx.zip
     -  tar -xvf android-sdk_r24.4-macosx.zip
