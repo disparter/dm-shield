@@ -15,6 +15,7 @@ before_install:
   - export LANG=en_US.UTF-8
   - brew update
   - nvm install v8.11.2
+  - chmod +x build.sh
 
 install:
     - nvm use 8.11.2
@@ -34,7 +35,8 @@ install:
     -  export ANDROID_HOME=./android-sdk-macosx
     -  export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.2
 
-script: build.sh
+script:
+  - ./build.sh
 
 cache:
   directories:

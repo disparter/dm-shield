@@ -1,6 +1,5 @@
 #!/bin/sh
 cd $TRAVIS_BUILD_DIR/dm-shield
-sbt ++$TRAVIS_SCALA_VERSION package
 
 # install build dependecies
 npm install -g cordova ionic
