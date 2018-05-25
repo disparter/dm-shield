@@ -11,11 +11,12 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in dm-shield.keystore.enc -out dm-shield.keystore -d
 script:
 - npm install -g ionic cordova
+- npm install ionic-angular@latest
+- npm install @angular/core@latest
 - npm install @angular/animations@latest
 - npm install @angular/common@latest
 - npm install @angular/compiler@latest
 - npm install @angular/compiler-cli@latest
-- npm install @angular/core@latest
 - npm install @angular/forms@latest
 - npm install @angular/http@latest
 - npm install @angular/platform-browser@latest
