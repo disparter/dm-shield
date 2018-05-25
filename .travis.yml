@@ -45,12 +45,9 @@ script:
   # install build dependecies
   - npm install -g cordova ionic
 
-  # - install plugins etc.
-  - cordova prepare
-
   # build Android and iOS packages
-  - cordova build android --release
-  # - cordova build ios --device --release
+  - ionic cordova build android --release
+  # - ionio cordova build ios --device --release
 
 after_success:
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
