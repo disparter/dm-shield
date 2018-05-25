@@ -14,9 +14,8 @@ env:
 before_install:
   - export LANG=en_US.UTF-8
   - brew update
-  - brew install node --without-npm
   - mkdir "~/.npm-packages"
-  - echo NPM_PACKAGES="~/.npm-packages" >> ~/.bashrc  
+  - echo NPM_PACKAGES="~/.npm-packages" >> ~/.bashrc
   - echo prefix=~/.npm-packages >> ~/.npmrc
   - curl -L https://www.npmjs.org/install.sh | sh
   - echo NODE_PATH=\"\$NPM_PACKAGES/lib/node_modules:\$NODE_PATH\" >> ~/.bashrc
