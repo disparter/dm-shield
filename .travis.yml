@@ -14,42 +14,28 @@ env:
 before_install:
   - export LANG=en_US.UTF-8
   - brew update
-  - mkdir "~/.npm-packages"
-  - echo NPM_PACKAGES="~/.npm-packages" >> ~/.bashrc
-  - echo prefix=~/.npm-packages >> ~/.npmrc
-  - curl -L https://www.npmjs.org/install.sh | sh
-  - echo NODE_PATH=\"\$NPM_PACKAGES/lib/node_modules:\$NODE_PATH\" >> ~/.bashrc
-  - echo PATH=\"\$NPM_PACKAGES/bin:\$PATH\" >> ~/.bashrc
-  - echo source "~/.bashrc" >> ~/.bash_profile
-  - source ~/.bashrc
+  - npm install -g npm@8.11.2
 
 install:
-  # install minimum set of dependencies to run tests and linters
-  - npm install -g npm
+    # install android SDK
+    -  wget http://dl.google.com/android/android-sdk_r24.4-macosx.zip
+    -  tar -xvf android-sdk_r24.4-macosx.zip
 
-before_script:
-  # update npm and bower dependencies
-  - npm install
+    -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter platform-tools
+    -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter build-tools-23.0.2
+    -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter android-23
+    -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter extra-android-support
+    -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter extra-android-m2repository
+    -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter extra-google-m2repository
 
-  # run linters and tests
-  # if fails then build process stops
-  # - gulp test
+    -  export ANDROID_HOME=./android-sdk-macosx
+    -  export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.2
+
+cache:
+  directories:
+    - "node_modules"
 
 script:
-  # install android SDK
-  -  wget http://dl.google.com/android/android-sdk_r24.4-macosx.zip
-  -  tar -xvf android-sdk_r24.4-macosx.zip
-
-  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter platform-tools
-  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter build-tools-23.0.2
-  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter android-23
-  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter extra-android-support
-  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter extra-android-m2repository
-  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter extra-google-m2repository
-
-  -  export ANDROID_HOME=./android-sdk-macosx
-  -  export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.2
-
   # install build dependecies
   - npm install -g cordova ionic
 
