@@ -11,7 +11,6 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in dm-shield.keystore.enc -out dm-shield.keystore -d
 script:
 - npm install -g ionic cordova
-- ionic cordova build android --release
 - npm install @angular/animations@latest
 - npm install @angular/common@latest
 - npm install @angular/compiler@latest
@@ -29,6 +28,7 @@ script:
 - npm install @ngx-translate/core@latest
 - npm install @ngx-translate/http-loader@latest
 - npm install
+- ionic cordova build android --release
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
 - zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk platforms/android/app/build/outputs/apk/release/app-release-signed.apk
 - supply run -j platforms/android/gapi.json -p com.github.disparter.dm_shield -b platforms/android/app/build/outputs/apk/release/app-release-signed.apk
