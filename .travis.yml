@@ -40,10 +40,10 @@ cache:
 
 script:
   # install build dependecies
-  - npm install -g cordova ionic
+  - npm install -g cordova
 
   # build Android and iOS packages
-  - ionic cordova build android --release
+  - cordova build android --release
   # - ionic cordova build ios --device --release
 
 after_success:
