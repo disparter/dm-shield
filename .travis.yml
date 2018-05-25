@@ -1,15 +1,59 @@
-language: android
-android:
-  components:
-    - tools
-    - build-tools
+sudo: false
+
+language: objective-c
+os: osx
+osx_image: xcode7.2
+
+cache: false
+
 before_install:
-- export LANG=en_US.UTF-8
-- nvm install v8.11.2
-- openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in dm-shield.keystore.enc -out dm-shield.keystore -d
+  - export LANG=en_US.UTF-8
+  - brew update
+
+install:
+  # install minimum set of dependencies to run tests and linters
+  - npm install -g npm gulp bower
+
+before_script:
+  # update npm and bower dependencies
+  - npm install
+  - bower update
+
+  # run linters and tests
+  # if fails then build process stops
+  # - gulp test
+
 script:
-- npm install -g @angular/cli ionic cordova
-- ionic cordova build android --release
+  # install android SDK
+  -  wget http://dl.google.com/android/android-sdk_r24.4-macosx.zip
+  -  tar -xvf android-sdk_r24.4-macosx.zip
+
+  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter platform-tools
+  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter build-tools-23.0.2
+  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter android-23
+  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter extra-android-support
+  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter extra-android-m2repository
+  -  echo y | ./android-sdk-macosx/tools/android update sdk --no-ui --all --filter extra-google-m2repository
+
+  -  export ANDROID_HOME=./android-sdk-macosx
+  -  export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.2
+
+  # install build dependecies
+  - npm install -g cordova ionic
+
+  # - install plugins etc.
+  - cordova prepare
+
+  # build Android and iOS packages
+  - cordova build android --release
+  # - cordova build ios --device --release
+
+after_success:
+  # generate documentation
+  # - gulp doc
+
+deploy:
+  # deploy build to s3, testflight etc.
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
 - zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk platforms/android/app/build/outputs/apk/release/app-release-signed.apk
 - supply run -j platforms/android/gapi.json -p com.github.disparter.dm_shield -b platforms/android/app/build/outputs/apk/release/app-release-signed.apk
