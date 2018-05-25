@@ -7,9 +7,9 @@ npm install -g cordova ionic
 chmod 777 node_modules
 
 # build Android and iOS packages
-ionic cordova build android --release
+cordova build android --release
 
-# - ionic cordova build ios --device --release
+# - cordova build ios --device --release
 
 #sign
 jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore dm-shield.keystore ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk dm-shield-key
