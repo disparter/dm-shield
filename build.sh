@@ -8,6 +8,8 @@ npm install ionic
 npm install @ionic/app-scripts@latest
 npm install ionic-angular@latest
 
+npm install @angular/core@v5-lts
+
 chmod 777 node_modules
 
 # build Android and iOS packages
