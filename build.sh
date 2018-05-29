@@ -1,7 +1,7 @@
 #!/bin/sh
 cd $TRAVIS_BUILD_DIR
 
-npm install -g cordova ionic
+npm install -g cordova@latest ionic
 
 # build Android and iOS packages
 ionic cordova platform remove android
