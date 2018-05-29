@@ -27,7 +27,7 @@ install:
 
     # install android SDK
     -  wget http://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip
-    -  unzip -a sdk-tools-darwin-3859397.zip
+    -  unzip -p sdk-tools-darwin-3859397.zip
 
     -  echo y | ./sdk-tools-darwin-3859397/tools/android update sdk --no-ui --all --filter platform-tools
     -  echo y | ./sdk-tools-darwin-3859397/tools/android update sdk --no-ui --all --filter build-tools-27.0.3
