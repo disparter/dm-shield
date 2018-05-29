@@ -1,9 +1,15 @@
 {
-  "name": "DM's Shield",
+  "name": "dm-shield",
   "version": "0.0.6",
+  "description": "An app to index important information about 5e Dungeons and Dragons Edition. Like the DM Shield.",
+  "private": true,
   "author": "Felipe Faria - Disparter",
   "homepage": "http://github.com/disparter",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/disparter/dm-shield.git"
+  },
+  "license" : "SEE LICENSE IN LICENSE and OPEN GAME LICENSE files",
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
@@ -48,7 +54,6 @@
     "@ionic/app-scripts": "^3.1.9",
     "typescript": "~2.6.2"
   },
-  "description": "An app to index important information about 5e Dungeons and Dragons Edition. Like the DM Shield.",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
