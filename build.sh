@@ -7,8 +7,11 @@ npm install -g cordova ionic
 npm install ionic
 npm install @ionic/app-scripts@latest
 npm install ionic-angular@latest
-
 npm install @angular/core@v5-lts
+npm install @angular/forms@v5-lts
+npm install @angular/platform-browser@v5-lts
+npm install @angular/platform-browser-dynamic@v5-lts
+npm install rxjs@latest
 
 chmod 777 node_modules
 
