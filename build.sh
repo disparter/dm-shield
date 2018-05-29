@@ -2,8 +2,9 @@
 cd $TRAVIS_BUILD_DIR
 
 # install build dependecies
-npm cache clear
+npm cache clear --force
 npm install -g cordova ionic
+npm install
 #npm install ionic
 #npm install @ionic/app-scripts@latest
 #chmod 777 node_modules
