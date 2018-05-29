@@ -16,4 +16,5 @@ jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -
 zipalign -v 4 ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk ./platforms/android/app/build/outputs/apk/release/app-release-signed.apk
 
 #supply
-supply run -j ./platforms/android/gapi.json -p com.github.disparter.dm_shield -b ./platforms/android/app/build/outputs/apk/release/app-release-signed.apk
+supply -v
+supply run -j ./gapi.json -p com.github.disparter.dm_shield -b ./platforms/android/app/build/outputs/apk/release/app-release-signed.apk
