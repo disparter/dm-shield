@@ -1,6 +1,9 @@
 sudo: false
-
 language: nodejs
+
+addons:
+    apt:
+      update: true
 
 env:
   global:
