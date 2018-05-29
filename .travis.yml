@@ -14,6 +14,7 @@ env:
 before_install:
   - export LANG=en_US.UTF-8
   - nvm install v8.11.2
+  - brew install gradle
   - chmod +x build.sh
   - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv
      -in dm-shield.keystore.enc -out dm-shield.keystore -d	   -in dm-shield.keystore.enc -out dm-shield.keystore -d
@@ -37,7 +38,3 @@ install:
 
 script:
   - ./build.sh
-
-cache:
-  directories:
-    - "node_modules"
