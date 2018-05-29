@@ -29,15 +29,15 @@ install:
     -  wget http://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip
     -  unzip -qq sdk-tools-darwin-3859397.zip
 
-    -  echo y | ./sdk-tools-darwin-3859397/tools/android update sdk --no-ui --all --filter platform-tools
-    -  echo y | ./sdk-tools-darwin-3859397/tools/android update sdk --no-ui --all --filter build-tools-27.0.3
-    -  echo y | ./sdk-tools-darwin-3859397/tools/android update sdk --no-ui --all --filter android-27
-    -  echo y | ./sdk-tools-darwin-3859397/tools/android update sdk --no-ui --all --filter extra-android-support
-    -  echo y | ./sdk-tools-darwin-3859397/tools/android update sdk --no-ui --all --filter extra-android-m2repository
-    -  echo y | ./sdk-tools-darwin-3859397/tools/android update sdk --no-ui --all --filter extra-google-m2repository
+    -  echo y | ./tools/android update sdk --no-ui --all --filter platform-tools
+    -  echo y | ./tools/android update sdk --no-ui --all --filter build-tools-27.0.3
+    -  echo y | ./tools/android update sdk --no-ui --all --filter android-27
+    -  echo y | ./tools/android update sdk --no-ui --all --filter extra-android-support
+    -  echo y | ./tools/android update sdk --no-ui --all --filter extra-android-m2repository
+    -  echo y | ./tools/android update sdk --no-ui --all --filter extra-google-m2repository
 
-    -  export ANDROID_HOME=./sdk-tools-darwin-3859397
-    -  export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/27.0.3
+    -  export ANDROID_HOME=./tools
+    -  export PATH=${PATH}:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/27.0.3
 
 script:
   - ./build.sh
