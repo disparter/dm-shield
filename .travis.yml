@@ -18,8 +18,8 @@ install:
     - nvm use 8.11.2
 
     # install android SDK
-    -  wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
-    -  tar -xvf android-sdk_r24.4.1-linux.tgz
+    -  wget http://dl.google.com/android/android-sdk_r24.2-linux.tgz
+    -  tar -xvf android-sdk_r24.2-linux.tgz
 
     -  echo y | ./android-sdk-linux/tools/android update sdk --no-ui --all --filter platform-tools
     -  echo y | ./android-sdk-linux/tools/android update sdk --no-ui --all --filter build-tools-23.0.2
