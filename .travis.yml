@@ -18,8 +18,10 @@ before_install:
   - rvm install 2.3.1
   - gem install supply
   - chmod +x build.sh
-  - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in dm-shield.keystore.enc -out dm-shield.keystore -d
-  - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv -in gapi.json.enc -out gapi.json -d
+  - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv
+       -in dm-shield.keystore.enc -out dm-shield.keystore -d	   -in dm-shield.keystore.enc -out dm-shield.keystore -d
+  - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv
+       -in gapi.json.enc -out gapi.json -d	   -in gapi.json.enc -out gapi.json -d
 
 install:
     - nvm use 8.11.2
