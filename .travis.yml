@@ -29,7 +29,7 @@ install:
     -  touch ~/.android/repositories.cfg
     -  mkdir android-sdk
     -  cd android-sdk
-    -  export ANDROID_HOME=~/android-sdk
+    -  export ANDROID_HOME=$(pwd)
     -  wget http://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip
     -  unzip -qq sdk-tools-darwin-3859397.zip
     -  yes | ./tools/bin/sdkmanager --licenses
