@@ -19,4 +19,4 @@ zipalign -v 4 ./platforms/android/app/build/outputs/apk/release/app-release-unsi
 mv gapi.json ./platforms/android/
 fastlane supply -v
 fastlane supply init -j ./platforms/android/gapi.json -p com.github.disparter.dm_shield
-fastlane supply run -j ./platforms/android/gapi.json -p com.github.disparter.dm_shield -b ./platforms/android/app/build/outputs/apk/release/app-release-signed.apk
+fastlane supply run --track beta -j ./platforms/android/gapi.json -p com.github.disparter.dm_shield -b ./platforms/android/app/build/outputs/apk/release/app-release-signed.apk
