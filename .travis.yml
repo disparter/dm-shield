@@ -25,12 +25,11 @@ install:
     - nvm use 8.11.2
 
     # install android SDK
-    -  mkdir android-sdk
-    -  export ANDROID_HOME=~/android-sdk
-
-    -  mkdir .android
+    -  mkdir ~/.android/
     -  touch ~/.android/repositories.cfg
+    -  mkdir android-sdk
     -  cd android-sdk
+    -  export ANDROID_HOME=~/android-sdk
     -  wget http://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip
     -  unzip -qq sdk-tools-darwin-3859397.zip
     -  yes | ./tools/bin/sdkmanager --licenses
