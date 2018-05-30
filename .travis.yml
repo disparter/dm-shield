@@ -1,8 +1,62 @@
-language: android
-android:
-  components:
-  - tools
-  - platform-tools
+sudo: false
+
+language: objective-c
+os: osx
+osx_image: xcode9.3
+
+cache: false
+
+env:
+  global:
+  - secure: Su5CSRnNCtlfu4S5v6L22eF72Htuuh++YE+o9E8ERZORToFdjnb8da9ZtuJnxPYas3kX1ioWar93Etg5SyIAxfCvTSkWM1/FoWVgcZcZ99QkxIwgNqqTCZCHBBzG/6OYSPhb0BOUCjorPnlcHedw3ll1tQgXO6pfdkFDvxgLv3xkBpwUhqROxbRDr3BxN+fgGWlshtHF3mKkO9hKbhfP6BGO3CfgXTgtauYJG42AqFHYfj08TKve8/xAYWLSo0Cd9hx1mGvlWs8Ja8dAf6Y+sICdXPgyWAZB08XyJCc9dIjUY0OIVbbsstNiXyD0UiLcl65PbfHZcZAVfJj813l3C8GVawYyKMO6ArvnmXUIQZ9CkgopbmEVWKX8EOsGGPZdkNw9wc38wE0ojhQPuAuMPniIMc80YtxhuHaEyFNo2UcD7i2k9wBQhBJdFQIgteXEvdFedeIMJF9nOd8MD80dcttGZEGUcioV8tv/dioiVipgODfKGbgSByc5f748x4Gi0pz20znhBSl950byw0aI9Hrc7B5agQ6EaW+LbzngW51Pz6aAn2B1QJ/MG6NiFkB0Q9f5nfqEk5edI1o1rrY2MetxpjiputQoDLtEqrkkPM0+Uynm2Sw0BZBDA5f0j3luykNYVo8lINDNaVjjNSU3KZgXtB9kYi+RLxWCI9tL8oE=
+  - secure: K6xCSoF0grDPkNMTLJGTnPfLAJ8o9pv1eozJ5g8PQzDZlT1aYF+PYRSFwxyhcnK11+ti7AFvMouyV0Lp4YCluxmoVrVHqq7CsCdQePRjYs5i1ShMT4drPVFi6YLvg5j2tB44V0JSvd+O84HF+HCI/QhYp+pE5t91EH5c6Q6jsN34OaCi3QD03ckRqrDF5OAnqr98E5WqmyguQr+WY1uazyvTkJ/5tH1kUUQS/nQ2Yyz07IBPq90RkIeA63tL/MD8z9axz9G1hStiE9MCRXkLA8oXfnbjcSn9G4fAS7EwRMvMkWn32HCOARjkumdBZWv0MDhju5r9jqqUghmcWd8cU0YEbNefV4RSyxVMjVDfz0uxd5yl3IEHlL9nAJO0I1dEfnuWGi7MvZz8HBt+PonL4yBMX2E5SjdqG3KN2qN+ZOPaWbtFMDbTKRD/vz/DRJI3eNRQtrP6o1gz7Ko7O4ph6tj/evinU0fSOccbOpD4gTyZ6I+iyyZXH2UsYTf9GajbumXZuUes7dwiKlOCWBRicF3AgNmxYTBrEaTQGCkHtj+0PmqQJCRKtFBQwDduXfBxFRA34AqNhe6+rkSaSmY2V7Up9AZ7duqyC6zNUT02VxS4foviqdmV9kKTtwEW93Im6fEuQYeFbKAgRD0KPotOiPfWqA9PzEH30zOCk2NceCA=
+
+branches:
+  only:
+  - master
+
+notifications:
+  slack:
+    secure: kesZCEWfNxx9wXEA1+PRMucdjjJ+gq+NGAk+YmcHk0J5NPCu4zOlHgNgLirysDxKFEjPWmmh3RLoFHN8Hti/Dqyv4l1D+y1rb4MA/myz68mpA3tINJuAVY+rKSoIsNx34we2/4ilCGZ+hiK4ey7GS42O1wjp47XumSmSbsVlWOH5xV+3inIlgfs8W+cdEq070RiDAvtZRHha6e6iF6Erdz31mJFYYIgHRsSQQRLzY5HBOPOWi/Qa003lg6IC2DnNat09RRet15bW08fYg9s0ZmitfaRY+mJsUXNSmAQBZkMMbukzEFnETPa/n4XNwPNP9Bl38qf3jKUjFFaPClxLo1K/1BgZrB+S0yt0vDHZZ/Rhd3VZCT2pTkNFO/1HaviEEkoFlRj7Cmi28+2YjcE5+40zR2Ygpih+7oUbFi4/4lmISMFDZyR7h740Q/ux+/I5gjgHW+riwz5CQegZzd0fCHLdSKfxWeB3CneAjqsdchXebM89996BDaCqc8nurgsMIbEkNJmPgeizDEwDMAphUXxcsPfqKmbdcZjODviEP+0+eMoCwbLK9z7N897a7EmJIJZwb4vjJUnoK+nH7G5r0JLUMkSfgY+lohFVYWaUMk39nzVDDVB1MZNDtR9EuPX2rlvCnZkOCgap7hu/cQSHNjgNwYoERCQ1vw60ygzGi6U=
+
 before_install:
-- openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv
-  -in dm-shield.keystore.enc -out dm-shield.keystore -d
+  - export LANG=en_US.UTF-8
+  - brew install gradle
+  - nvm install v8.11.2
+  - rvm install 2.3.1
+  - gem install supply
+  - chmod +x build.sh
+  - openssl aes-256-cbc -K $encrypted_6f938e004816_key -iv $encrypted_6f938e004816_iv
+    -in gapi-files.zip.enc -out gapi-files.zip -d
+  - unzip -qq gapi-files.zip
+
+install:
+    - nvm use 8.11.2
+
+    # install android SDK
+    -  mkdir ~/.android/
+    -  touch ~/.android/repositories.cfg
+    -  mkdir android-sdk
+    -  cd android-sdk
+    -  export ANDROID_HOME=$(pwd)
+    -  wget http://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip
+    -  unzip -qq sdk-tools-darwin-3859397.zip
+    -  yes | ./tools/bin/sdkmanager --licenses
+    -  yes | ./tools/bin/sdkmanager "platform-tools" "build-tools;27.0.3"
+
+    -  export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/27.0.3
+    -  cd ..
+
+script:
+  - ./build.sh
+
+deploy:
+  provider: s3
+  access_key_id: AKIAI4ITKWYU4OTSL55A
+  secret_access_key:
+    secure: RMYyFdQS0aURUvrMl/RzoEVT5lP2B0WWi4Wcn0zzMiuj/oNcs1w44lWAORV43A1x/VDu/QuHZrW0HQa7c2xiMeYsUI6ge3EbxkGA7iLpVUtOVaLJ8v7p7qXRicXHGzsYBUNulgdanRHbrB497KTle6Pjmj0Hyc9phCyDGsZJvfVTWPi499ofBs/iyorK0m1e3sFXDaEIXp9LvWR3byn7btYLvBeXl9jIvd7IosyhvCxwKMtclcmE9wCbogMswiSsDGAMCbFDSPfacfV8ddmt8upME1/e6EoAt0zzPvcJw0o9ddL1HyTVjII0FLMYkvwKVts0sJJypo5vjNMoM1sjLJBso3aV+z5jRE2MJvDwqq55pzKK+99HUaQhNw+D6i/gLHp1knykPmlKLicWufO3HG8MYA8vesotpWoj0pdEUWQ1s7kzWU1ejqFCzEwWqN77UYL+1tri5YT6AkuD3WEpuYfUoY1ewXENC4ZphiGBGWlx7kwDolyTlTA43cdjr0Loi9Pxn2bA1HNxtJbR2YOL/1OKp5q3ULfg9q/zZ+rzyMnqTFgvcjbv7Feknvo7nRt8ZUAP7rCaTTCMNlv6kPPABNOij3mEgFhosd+k4yAi0xejNvk8xlKR3dZb7NHrtugs90P7BpGP7cj5Obgy5VPImUS4cqodwuiA5ao7EzKBtLk=
+  bucket: dm-shield
+  local-dir: www
+  acl: public_read
+  on:
+    repo: disparter/dm-shield
