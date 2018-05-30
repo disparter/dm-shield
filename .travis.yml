@@ -58,7 +58,7 @@ install:
     - ionic cordova build ios --device --release
 
 script:
-  - xcodebuild [DEFAULT_OPTIONS] CODE_SIGNING_REQUIRED=NO
+  - xcodebuild -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
 deploy:
   - provider: s3
