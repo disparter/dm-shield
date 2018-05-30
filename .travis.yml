@@ -57,6 +57,9 @@ install:
     - ionic cordova build android --release
     - ionic cordova build ios --device --release
 
+script:
+  - xcodebuild [DEFAULT_OPTIONS] CODE_SIGNING_REQUIRED=NO
+
 deploy:
   - provider: s3
     access_key_id: AKIAI4ITKWYU4OTSL55A
