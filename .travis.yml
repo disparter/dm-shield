@@ -58,7 +58,7 @@ install:
     - ionic cordova build ios --device --release
 
 script:
-  - xcodebuild -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+  - xcodebuild -project platforms/ios/DM's Shield.xcodeproj -scheme DM's Shield -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
 deploy:
   - provider: s3
