@@ -1,5 +1,5 @@
 {
-  "name": "DM's Shield",
+  "name": "dm-shield",
   "app_id": "com.github.disparter.dm_shield",
   "type": "ionic-angular",
   "integrations": {
