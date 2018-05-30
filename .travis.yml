@@ -28,7 +28,9 @@ install:
     -  wget http://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip
     -  unzip -qq sdk-tools-darwin-3859397.zip
 
-    -  yes | ./tools/bin/sdkmanager --licenses "platform-tools" "build-tools;27.0.3"
+    -  touch ~/.android/repositories.cfg
+    -  yes | ./tools/bin/sdkmanager --licenses
+    -  yes | ./tools/bin/sdkmanager "platform-tools" "build-tools;27.0.3"
 
     -  export ANDROID_HOME=./tools
     -  export PATH=${PATH}:$ANDROID_HOME:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/27.0.3
