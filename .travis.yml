@@ -61,6 +61,7 @@ script:
   - xcodebuild -project platforms/ios/dm-shield.xcodeproj -scheme dm-shield -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
 deploy:
+  skip_cleanup: true
   - provider: s3
     access_key_id: AKIAI4ITKWYU4OTSL55A
     secret_access_key:
