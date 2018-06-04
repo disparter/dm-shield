@@ -69,9 +69,6 @@ script:
   - xcodebuild -project platforms/ios/dm-shield.xcodeproj -scheme dm-shield -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: deploy-play.sh
   - provider: s3
     skip_cleanup: true
     access_key_id: AKIAI4ITKWYU4OTSL55A
@@ -82,3 +79,6 @@ deploy:
     acl: public_read
     on:
       repo: disparter/dm-shield
+
+after_succes:
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash $TRAVIS_BUILD/deploy-play.sh; fi'
