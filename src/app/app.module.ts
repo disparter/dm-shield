@@ -1,39 +1,53 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { ErrorHandler, NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ConditionsPage } from '../pages/conditions/conditions';
-import { DamagesPage } from '../pages/damages/damages';
-import { LicensePage } from '../pages/license/license';
-import { MonsterTypePage } from '../pages/monster-types/monster-types';
-import { SkillTypePage } from "../pages/skill-types/skill-types";
-import { SenseTypePage } from "../pages/senses-types/sense-types";
-import { LanguageTypePage } from "../pages/language-types/language-types";
 import { AlignmentsPage } from "../pages/alignments/alignments";
+import { ConditionsPage } from "../pages/conditions/conditions";
+import { DamagesPage } from "../pages/damages/damages";
+import { HomePage } from "../pages/home/home";
+import { LanguageTypePage } from "../pages/language-types/language-types";
+import { LicensePage } from "../pages/license/license";
+import { MonsterTypePage } from "../pages/monster-types/monster-types";
+import { SenseTypePage } from "../pages/senses-types/sense-types";
+import { SkillTypePage } from "../pages/skill-types/skill-types";
 import { SpeedsPage } from "../pages/speeds/speeds";
+import { MyApp } from "./app.component";
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { SplashScreen } from "@ionic-native/splash-screen";
+import { StatusBar } from "@ionic-native/status-bar";
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
 
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader} from "@ngx-translate/http-loader";
 
 import { Globalization} from "@ionic-native/globalization";
 
-import { IonicStorageModule } from '@ionic/storage';
+import { IonicStorageModule } from "@ionic/storage";
 import { RequestProvider } from "../providers/request/request.provider";
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
 @NgModule({
+  bootstrap: [IonicApp],
   declarations: [
+    MyApp,
+    HomePage,
+    ConditionsPage,
+    DamagesPage,
+    LicensePage,
+    MonsterTypePage,
+    SkillTypePage,
+    SenseTypePage,
+    LanguageTypePage,
+    AlignmentsPage,
+    SpeedsPage,
+  ],
+  entryComponents: [
     MyApp,
     HomePage,
     ConditionsPage,
@@ -52,30 +66,16 @@ export function createTranslateLoader(http: HttpClient) {
     NgHttpLoaderModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot({
-      name: '__mydb',
-      driverOrder: ['indexeddb', 'sqlite', 'websql']
+      driverOrder: ["indexeddb", "sqlite", "websql"],
+      name: "__mydb",
     }),
     TranslateModule.forRoot({
       loader: {
+        deps: [HttpClient],
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
+      },
     }),
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    ConditionsPage,
-    DamagesPage,
-    LicensePage,
-    MonsterTypePage,
-    SkillTypePage,
-    SenseTypePage,
-    LanguageTypePage,
-    AlignmentsPage,
-    SpeedsPage,
   ],
   providers: [
     StatusBar,
@@ -83,6 +83,6 @@ export function createTranslateLoader(http: HttpClient) {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Globalization,
     RequestProvider,
-  ]
+  ],
 })
 export class AppModule {}

@@ -26,7 +26,7 @@ export class SpeedsPage {
       const errorDetails = {
         duration: 3000,
         message: "Error searching for speed types " + error.error,
-        position: "botton",
+        position: "bottom",
       };
       this.toast.create(errorDetails).present();
     });
