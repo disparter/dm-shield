@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  templateUrl: 'license.html'
+  templateUrl: "license.html",
 })
 export class LicensePage {
 

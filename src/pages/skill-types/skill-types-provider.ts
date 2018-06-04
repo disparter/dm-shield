@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import "rxjs/add/operator/map";
 import { RequestProvider } from "../../providers/request/request.provider";
-import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SkillTypesProvider {
-  private API_URL = 'https://ddnext-apis.herokuapp.com/v1/skills/types';
+  private API_URL = "https://ddnext-apis.herokuapp.com/v1/skills/types";
 
   constructor(public http: HttpClient, private request: RequestProvider) { }
 

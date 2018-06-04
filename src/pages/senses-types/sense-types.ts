@@ -1,35 +1,41 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
-import { SenseTypesProvider } from './sense-types-provider';
+import { Component } from "@angular/core";
+import { NavController, NavParams, ToastController } from "ionic-angular";
+import { SenseTypesProvider } from "./sense-types-provider";
 
 @Component({
-  selector: 'page-list',
-  templateUrl: 'sense-types.html',
-  providers: [[SenseTypesProvider]]
+  providers: [[SenseTypesProvider]],
+  selector: "page-list",
+  templateUrl: "sense-types.html",
 })
 export class SenseTypePage {
-  selectedItem: any;
-  items: Array<{title: string}>;
+  public selectedItem: any;
+  public items: Array<{title: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public senseTypesProvider:SenseTypesProvider, private toast: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public senseTypesProvider: SenseTypesProvider, private toast: ToastController) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.selectedItem = navParams.get("item");
 
     this.items = [];
     senseTypesProvider.getTypes().then((result: any) => {
-      for (let i = 0; i < result.length; i++) {
-        this.items.push(result[i]);
+      for (const item of result) {
+        this.items.push(item);
       }
     })
-    .catch((error: any) => {
-      this.toast.create({ message: 'Error searching for sense types ' + error.error, position: 'botton', duration: 3000 }).present();
-    });
+      .catch((error: any) => {
+        const errorDetails = {
+          duration: 3000,
+          message: "Error searching for senses types " + error.error,
+          position: "bottom",
+        };
+        this.toast.create(errorDetails).present();
+      });
   }
 
-  itemTapped(event, item) {
+  public itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
     this.navCtrl.push(SenseTypePage, {
-      item: item
+      item,
     });
   }
 }

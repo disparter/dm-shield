@@ -1,35 +1,41 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
-import { LanguageTypesProvider } from './language-types-provider';
+import { Component } from "@angular/core";
+import { NavController, NavParams, ToastController } from "ionic-angular";
+import { LanguageTypesProvider } from "./language-types-provider";
 
 @Component({
-  selector: 'page-list',
-  templateUrl: 'language-types.html',
-  providers: [[LanguageTypesProvider]]
+  providers: [[LanguageTypesProvider]],
+  selector: "page-list",
+  templateUrl: "language-types.html",
 })
 export class LanguageTypePage {
-  selectedItem: any;
-  items: Array<{title: string}>;
+  public selectedItem: any;
+  public items: Array<{title: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public languageTypesProvider:LanguageTypesProvider, private toast: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public languageTypesProvider: LanguageTypesProvider, private toast: ToastController) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.selectedItem = navParams.get("item");
 
     this.items = [];
     languageTypesProvider.getTypes().then((result: any) => {
-      for (let i = 0; i < result.length; i++) {
-        this.items.push(result[i]);
+      for (const item of result) {
+        this.items.push(item);
       }
     })
     .catch((error: any) => {
-      this.toast.create({ message: 'Error searching for language types ' + error.error, position: 'botton', duration: 3000 }).present();
+      const errorDetails = {
+        duration: 3000,
+        message: "Error searching for languages " + error.error,
+        position: "bottom",
+      };
+      this.toast.create(errorDetails).present();
     });
   }
 
-  itemTapped(event, item) {
+  public itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
     this.navCtrl.push(LanguageTypePage, {
-      item: item
+      item,
     });
   }
 }

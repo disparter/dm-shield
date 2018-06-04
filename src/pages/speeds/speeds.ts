@@ -8,8 +8,8 @@ import { SpeedsProvider } from "./speeds-provider";
   templateUrl: "speeds.html",
 })
 export class SpeedsPage {
-  private selectedItem: any;
-  private items: Array<{title: string}>;
+  public selectedItem: any;
+  public items: Array<{title: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public speedsProvider: SpeedsProvider,
               private toast: ToastController) {
@@ -26,7 +26,7 @@ export class SpeedsPage {
       const errorDetails = {
         duration: 3000,
         message: "Error searching for speed types " + error.error,
-        position: "botton",
+        position: "bottom",
       };
       this.toast.create(errorDetails).present();
     });

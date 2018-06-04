@@ -1,38 +1,41 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
-import { ConditionsProvider } from './conditions-provider';
-
+import { Component } from "@angular/core";
+import { NavController, NavParams, ToastController } from "ionic-angular";
+import { ConditionsProvider } from "./conditions-provider";
 
 @Component({
-  selector: 'page-list',
-  templateUrl: 'conditions.html',
-  providers: [[ConditionsProvider]]
+  providers: [[ConditionsProvider]],
+  selector: "page-list",
+  templateUrl: "conditions.html",
 })
 export class ConditionsPage {
-  selectedItem: any;
-  items: Array<{title: string}>;
+  public selectedItem: any;
+  public items: Array<{title: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public conditionsProvider:ConditionsProvider, private toast: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public conditionsProvider: ConditionsProvider, private toast: ToastController) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.selectedItem = navParams.get("item");
 
     this.items = [];
     conditionsProvider.getConditions().then((result: any) => {
-      for (let i = 0; i < result.length; i++) {
-        this.items.push(result[i]);
+      for (const item of result) {
+        this.items.push(item);
       }
     })
     .catch((error: any) => {
-      this.toast.create({ message: 'Error searching for conditions ' + error.error, position: 'botton', duration: 3000 }).present();
+      const errorDetails = {
+        duration: 3000,
+        message: "Error searching for conditions " + error.error,
+        position: "bottom",
+      };
+      this.toast.create(errorDetails).present();
     });
   }
 
-
-
-  itemTapped(event, item) {
+  public itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
     this.navCtrl.push(ConditionsPage, {
-      item: item
+      item,
     });
   }
 }
