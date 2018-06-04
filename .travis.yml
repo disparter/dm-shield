@@ -26,7 +26,7 @@ addons:
   sonarcloud:
     organization: "disparter-github" # the key of the org you chose at step #3
     token: $SONAR_TOKEN
-    
+
 before_install:
   - export LANG=en_US.UTF-8
   - brew install gradle
@@ -69,6 +69,9 @@ script:
   - xcodebuild -project platforms/ios/dm-shield.xcodeproj -scheme dm-shield -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
 deploy:
+  - provider: script
+    skip_cleanup: true
+    script: deploy-play.sh
   - provider: s3
     skip_cleanup: true
     access_key_id: AKIAI4ITKWYU4OTSL55A
@@ -79,6 +82,3 @@ deploy:
     acl: public_read
     on:
       repo: disparter/dm-shield
-  - provider: script
-    script: deploy-play.sh
-
