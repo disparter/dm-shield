@@ -1,0 +1,2 @@
+Added a language index
+Fixed small bugs

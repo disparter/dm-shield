@@ -1,0 +1,4 @@
+An index for conditions
+An index for damage types
+A language selector (pt-BR, en-US)
+Open Game License

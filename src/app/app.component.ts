@@ -16,6 +16,7 @@ import {SkillTypePage} from "../pages/skill-types/skill-types";
 import {SenseTypePage} from "../pages/senses-types/sense-types";
 import {LanguageTypePage} from "../pages/language-types/language-types";
 import {AlignmentsPage} from "../pages/alignments/alignments";
+import {SpeedsPage} from "../pages/speeds/speeds";
 
 import {defaultLanguage} from '../constants/language.constants';
 import {RequestProvider} from "../providers/request/request.provider";
@@ -44,6 +45,7 @@ export class MyApp {
       {title: 'MENU.SENSE-TYPES', component: SenseTypePage},
       {title: 'MENU.LANGUAGE-TYPES', component: LanguageTypePage},
       {title: 'MENU.ALIGNMENTS', component: AlignmentsPage},
+      {title: 'MENU.SPEEDS', component: SpeedsPage},
       {title: 'MENU.LICENSE', component: LicensePage}
     ];
   }
