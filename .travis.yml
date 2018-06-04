@@ -25,9 +25,8 @@ notifications:
 addons:
   sonarcloud:
     organization: "disparter-github" # the key of the org you chose at step #3
-    token:
-       secure: gpWwveycej6X9FW45rWJlt5CEld9G6abXSKxCpiYVoV0D8XCAyLeppAqWibR7hJJSmSKZpLDGhNqvrnrZ4HnDhW6swPKwUJs+5qbiKLc+XaxbsUE3yfUvItVacwtXAt8GktjspDdoGSJtY7UDm+0QGZ9NGfpZTuntyOmUvhc7/yg5Ri2QpcHlZHA+zXP24nylebAoyb4j419Tfai16jR42aYkuL3OLasnRNs5b4IzTCpdZMI8PyCbu+JLOk5zTt7qrSX0xTMQUrKCqYPU/nOwas4UnfifUC1LC+64G8udCgGCJbyISbmKopolUJAQETOQmrAppZPXnDULPmLEFA7cNUxJOkrlz7clzaxT9gYzy8VQjdzJ452lw6v5JiD9F1WVPb1RoQivEhhBVtvSZBcw+Eu10r46Qm6LHdJYeTnPIA7Nq3uZYlYzRHpHIAI/bWhT8irpBGY+sZT+kboKVWfz7sbWJuRKZ796uB9JfrMhdfEOT6W8ZhhZZwEgoGBNpuNS2ychVHfeWrK9pt+JK7oX0ZHQqp9PWOR1jZetbWqXonaCMZJ4FgfYEfbLxmwO164q3LFYfYmL/FAn+hoNIIBU/sjXx4nCfNjHM+RM+UlDtG/wvzDUmEGUW816jOObhl0roB8OnkF1eQZ+PTfOR7BZ363PYqReYYP4TevdffjVKk=
-
+    token: $SONAR_TOKEN
+    
 before_install:
   - export LANG=en_US.UTF-8
   - brew install gradle
