@@ -81,4 +81,4 @@ deploy:
       repo: disparter/dm-shield
 
 after_success:
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash $TRAVIS_BUILD/deploy-play.sh; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./deploy-play.sh; fi'
