@@ -22,10 +22,10 @@
 
 ## :cyclone: Continuous Integration status
 [![Build Status](https://travis-ci.org/disparter/dm-shield.svg?branch=master)](https://travis-ci.org/disparter/dm-shield)
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=dm-shield&metric=alert_status)](https://sonarcloud.io/dashboard/index/dm-shield)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=dm-shield&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=dm-shield)
-[![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=dm-shield&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=dm-shield)
-[![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=dm-shield&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=dm-shield)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=dmshield&metric=alert_status)](https://sonarcloud.io/dashboard/index/dmshield)
+[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=dmshield&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=dmshield)
+[![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=dmshield&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=dmshield)
+[![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=dmshield&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=dmshield)
 
 ## :octocat: Contributors
 
