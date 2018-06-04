@@ -17,9 +17,16 @@ branches:
   - master
 
 notifications:
+  on_start: always
+  email: false
   slack:
     secure: kesZCEWfNxx9wXEA1+PRMucdjjJ+gq+NGAk+YmcHk0J5NPCu4zOlHgNgLirysDxKFEjPWmmh3RLoFHN8Hti/Dqyv4l1D+y1rb4MA/myz68mpA3tINJuAVY+rKSoIsNx34we2/4ilCGZ+hiK4ey7GS42O1wjp47XumSmSbsVlWOH5xV+3inIlgfs8W+cdEq070RiDAvtZRHha6e6iF6Erdz31mJFYYIgHRsSQQRLzY5HBOPOWi/Qa003lg6IC2DnNat09RRet15bW08fYg9s0ZmitfaRY+mJsUXNSmAQBZkMMbukzEFnETPa/n4XNwPNP9Bl38qf3jKUjFFaPClxLo1K/1BgZrB+S0yt0vDHZZ/Rhd3VZCT2pTkNFO/1HaviEEkoFlRj7Cmi28+2YjcE5+40zR2Ygpih+7oUbFi4/4lmISMFDZyR7h740Q/ux+/I5gjgHW+riwz5CQegZzd0fCHLdSKfxWeB3CneAjqsdchXebM89996BDaCqc8nurgsMIbEkNJmPgeizDEwDMAphUXxcsPfqKmbdcZjODviEP+0+eMoCwbLK9z7N897a7EmJIJZwb4vjJUnoK+nH7G5r0JLUMkSfgY+lohFVYWaUMk39nzVDDVB1MZNDtR9EuPX2rlvCnZkOCgap7hu/cQSHNjgNwYoERCQ1vw60ygzGi6U=
 
+addons:
+  sonarcloud:
+    organization: "disparter-github" # the key of the org you chose at step #3
+    token: $SONAR_TOKEN
+    
 before_install:
   - export LANG=en_US.UTF-8
   - brew install gradle
@@ -58,6 +65,7 @@ install:
     - ionic cordova build ios --device --release
 
 script:
+  - sonar-scanner
   - xcodebuild -project platforms/ios/dm-shield.xcodeproj -scheme dm-shield -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
 deploy:
@@ -72,6 +80,5 @@ deploy:
     on:
       repo: disparter/dm-shield
   - provider: script
-    skip_cleanup: true
     script: deploy-play.sh
 
