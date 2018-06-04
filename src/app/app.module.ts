@@ -12,6 +12,7 @@ import { SkillTypePage } from "../pages/skill-types/skill-types";
 import { SenseTypePage } from "../pages/senses-types/sense-types";
 import { LanguageTypePage } from "../pages/language-types/language-types";
 import { AlignmentsPage } from "../pages/alignments/alignments";
+import { SpeedsPage } from "../pages/speeds/speeds";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -43,6 +44,7 @@ export function createTranslateLoader(http: HttpClient) {
     SenseTypePage,
     LanguageTypePage,
     AlignmentsPage,
+    SpeedsPage,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +75,7 @@ export function createTranslateLoader(http: HttpClient) {
     SenseTypePage,
     LanguageTypePage,
     AlignmentsPage,
+    SpeedsPage,
   ],
   providers: [
     StatusBar,

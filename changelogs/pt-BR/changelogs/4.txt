@@ -1,0 +1,4 @@
+Um catálogo para condições
+Um catálogo para tipos de dano
+Um seletor de idiomas (pt-BR, en-US)
+Open Game License

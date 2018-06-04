@@ -1,0 +1,2 @@
+Criado catálogo para idiomas
+Corrigido pequenos bugs
