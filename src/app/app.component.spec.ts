@@ -12,6 +12,10 @@ import {
   StatusBarMock,
 } from "../../test-config/mocks-ionic";
 
+import { HttpClient } from "@angular/common/http";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { createTranslateLoader } from "./app.module";
+
 describe("MyApp Component", () => {
   let fixture;
   let component;
@@ -21,6 +25,13 @@ describe("MyApp Component", () => {
       declarations: [MyApp],
       imports: [
         IonicModule.forRoot(MyApp),
+        TranslateModule.forRoot({
+          loader: {
+            deps: [HttpClient],
+            provide: TranslateLoader,
+            useFactory: (createTranslateLoader),
+          },
+        }),
       ],
       providers: [
         { provide: StatusBar, useClass: StatusBarMock },
