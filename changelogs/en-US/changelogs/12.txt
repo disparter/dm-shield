@@ -1,0 +1,2 @@
+Created settings menu and moved language settings from home to settings
+Changed menu layout, icon's added

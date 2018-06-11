@@ -14,6 +14,7 @@ import {LanguageTypePage} from "../pages/language-types/language-types";
 import {LicensePage} from "../pages/license/license";
 import {MonsterTypePage} from "../pages/monster-types/monster-types";
 import {SenseTypePage} from "../pages/senses-types/sense-types";
+import {SettingsPage} from "../pages/settings/settings";
 import {SizesPage} from "../pages/sizes/sizes";
 import {SkillTypePage} from "../pages/skill-types/skill-types";
 import {SpeedsPage} from "../pages/speeds/speeds";
@@ -29,7 +30,7 @@ export class MyApp {
 
   public rootPage: any = HomePage;
 
-  public pages: Array<{ title: any, component: any }>;
+  public pages: Array<{ title: any, component: any, icon: string }>;
 
   constructor(private translate: TranslateService, public platform: Platform, public statusBar: StatusBar,
               public splashScreen: SplashScreen, private storage: Storage,
@@ -37,17 +38,18 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      {title: "MENU.HOME", component: HomePage},
-      {title: "MENU.ALIGNMENTS", component: AlignmentsPage},
-      {title: "MENU.CONDITIONS", component: ConditionsPage},
-      {title: "MENU.DAMAGES", component: DamagesPage},
-      {title: "MENU.LANGUAGE-TYPES", component: LanguageTypePage},
-      {title: "MENU.MONSTER-TYPES", component: MonsterTypePage},
-      {title: "MENU.SENSE-TYPES", component: SenseTypePage},
-      {title: "MENU.SIZES", component: SizesPage},
-      {title: "MENU.SKILL-TYPES", component: SkillTypePage},
-      {title: "MENU.SPEEDS", component: SpeedsPage},
-      {title: "MENU.LICENSE", component: LicensePage},
+      {title: "MENU.HOME", component: HomePage, icon: "home"},
+      {title: "MENU.ALIGNMENTS", component: AlignmentsPage, icon: "logo-freebsd-devil"},
+      {title: "MENU.CONDITIONS", component: ConditionsPage, icon: "nuclear"},
+      {title: "MENU.DAMAGES", component: DamagesPage, icon: "thunderstorm"},
+      {title: "MENU.LANGUAGE-TYPES", component: LanguageTypePage, icon: "school"},
+      {title: "MENU.MONSTER-TYPES", component: MonsterTypePage, icon: "logo-snapchat"},
+      {title: "MENU.SENSE-TYPES", component: SenseTypePage, icon: "glasses"},
+      {title: "MENU.SIZES", component: SizesPage, icon: "podium"},
+      {title: "MENU.SKILL-TYPES", component: SkillTypePage, icon: "hammer"},
+      {title: "MENU.SPEEDS", component: SpeedsPage, icon: "move"},
+      {title: "MENU.LICENSE", component: LicensePage, icon: null},
+      {title: "MENU.SETTINGS", component: SettingsPage, icon: "settings"},
     ];
   }
 

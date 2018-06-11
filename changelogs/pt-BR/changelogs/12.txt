@@ -1,0 +1,2 @@
+Criado menu de configurações e movido a configuração de idiomas para esse menu
+Alterado o layout do menu, adicionado ícones

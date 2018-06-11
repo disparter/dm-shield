@@ -10,6 +10,7 @@ import { LanguageTypePage } from "../pages/language-types/language-types";
 import { LicensePage } from "../pages/license/license";
 import { MonsterTypePage } from "../pages/monster-types/monster-types";
 import { SenseTypePage } from "../pages/senses-types/sense-types";
+import { SettingsPage } from "../pages/settings/settings";
 import { SizesPage } from "../pages/sizes/sizes";
 import { SkillTypePage } from "../pages/skill-types/skill-types";
 
@@ -45,6 +46,7 @@ export function createTranslateLoader(http: HttpClient) {
     LicensePage,
     MonsterTypePage,
     SenseTypePage,
+    SettingsPage,
     SizesPage,
     SkillTypePage,
     SpeedsPage,
@@ -60,6 +62,7 @@ export function createTranslateLoader(http: HttpClient) {
     LicensePage,
     MonsterTypePage,
     SenseTypePage,
+    SettingsPage,
     SizesPage,
     SkillTypePage,
     SpeedsPage,
