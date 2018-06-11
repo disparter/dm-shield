@@ -1,21 +1,24 @@
 {
   "MENU": {
-    "HOME"           : "Home",
+    "ALIGNMENTS"     : "Alignments",
     "CONDITIONS"     : "Conditions",
     "DAMAGES"        : "Damage Types",
+    "HOME"           : "Home",
+    "LANGUAGE-TYPES" : "Languages",
     "LICENSE"        : "License",
     "MONSTER-TYPES"  : "Monster Types",
     "SENSE-TYPES"    : "Senses",
-    "LANGUAGE-TYPES" : "Languages",
-    "ALIGNMENTS"     : "Alignments",
+    "SETTINGS"       : "Settings",
     "SIZES"          : "Sizes",
-    "SPEEDS"         : "Speed Types",
-    "SKILL-TYPES"    : "Skills"
+    "SKILL-TYPES"    : "Skills",
+    "SPEEDS"         : "Speed Types"
   },
   "HOME": {
-    "LANGUAGE" : "Language",
     "WELCOME"  : "Welcome! This a beta version, check the left menu for the pieces of information already developed.",
     "APPNAME"  : "DM's Shield",
     "TITLE"    : "HOME"
+  },
+  "SETTINGS": {
+    "LANGUAGE" : "Language"
   }
 }

@@ -12,14 +12,4 @@
 
   <p>{{ 'HOME.WELCOME' | translate }}</p>
 
-  <ion-list>
-    <ion-item-group radio-group (ionChange)="applyLanguage()" [(ngModel)]="selectedLanguage">
-      <ion-item-divider color="light">{{ 'HOME.LANGUAGE' | translate }}</ion-item-divider>
-      <ion-item *ngFor="let lang of languages">
-        <ion-label>{{lang.name}}</ion-label>
-        <ion-radio [value]="lang.code"></ion-radio>
-      </ion-item>
-    </ion-item-group>
-  </ion-list>
-
 </ion-content>

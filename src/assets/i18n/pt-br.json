@@ -1,21 +1,24 @@
 {
   "MENU": {
-    "HOME"           : "Início",
+    "ALIGNMENTS"     : "Tendências",
     "CONDITIONS"     : "Condições",
     "DAMAGES"        : "Tipos de Dano",
+    "HOME"           : "Início",
+    "LANGUAGE-TYPES" : "Idiomas",
     "LICENSE"        : "Licença",
     "MONSTER-TYPES"  : "Tipos de Monstros",
     "SENSE-TYPES"    : "Sentidos",
-    "LANGUAGE-TYPES" : "Idiomas",
-    "ALIGNMENTS"     : "Tendências",
+    "SETTINGS"       : "Configurações",
     "SIZES"          : "Tamanhos",
-    "SPEEDS"         : "Tipos de Deslocamento",
-    "SKILL-TYPES"    : "Perícias"
+    "SKILL-TYPES"    : "Perícias",
+    "SPEEDS"         : "Tipos de Deslocamento"
   },
   "HOME": {
-    "LANGUAGE" : "Idioma",
     "WELCOME"  : "Bem vindo! Esta é uma versão beta ainda, verifique o menu lateral para informações que já foram desenvolvidas.",
     "APPNAME"  : "Escudo do Mestre",
     "TITLE"    : "Início"
+  },
+  "SETTINGS": {
+    "LANGUAGE" : "Idioma"
   }
 }
