@@ -1,6 +1,8 @@
 import { async, TestBed } from "@angular/core/testing";
 import { IonicModule, Platform } from "ionic-angular";
 
+import { IonicStorageModule } from "@ionic/storage";
+
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 
@@ -12,9 +14,17 @@ import {
   StatusBarMock,
 } from "../../test-config/mocks-ionic";
 
-import { HttpClient } from "@angular/common/http";
+import { BrowserModule } from "@angular/platform-browser";
+
+import { HttpClient, HttpClientModule, HttpHandler  } from "@angular/common/http";
+
+import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
+
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { createTranslateLoader } from "./app.module";
+
+import {RequestProvider} from "../providers/request/request.provider";
+
 
 describe("MyApp Component", () => {
   let fixture;
@@ -24,7 +34,14 @@ describe("MyApp Component", () => {
     TestBed.configureTestingModule({
       declarations: [MyApp],
       imports: [
+        BrowserModule,
+        HttpClientModule,
+        NgHttpLoaderModule,
         IonicModule.forRoot(MyApp),
+        IonicStorageModule.forRoot({
+          driverOrder: ["indexeddb", "sqlite", "websql"],
+          name: "__mydb",
+        }),
         TranslateModule.forRoot({
           loader: {
             deps: [HttpClient],
@@ -37,6 +54,11 @@ describe("MyApp Component", () => {
         { provide: StatusBar, useClass: StatusBarMock },
         { provide: SplashScreen, useClass: SplashScreenMock },
         { provide: Platform, useClass: PlatformMock },
+        HttpClient,
+        HttpClientModule,
+        HttpHandler,
+        Storage,
+        RequestProvider,
       ],
     });
   }));
@@ -50,8 +72,8 @@ describe("MyApp Component", () => {
     expect(component instanceof MyApp).toBe(true);
   });
 
-  it("should have two pages", () => {
-    expect(component.pages.length).toBe(2);
+  it("should have 10 pages", () => {
+    expect(component.pages.length).toBe(10);
   });
 
 });

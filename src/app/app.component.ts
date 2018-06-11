@@ -3,7 +3,6 @@ import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
 import {Nav, Platform} from "ionic-angular";
 
-import {Globalization} from "@ionic-native/globalization";
 import {Storage} from "@ionic/storage";
 import {TranslateService} from "@ngx-translate/core";
 
@@ -32,7 +31,7 @@ export class MyApp {
   public pages: Array<{ title: any, component: any }>;
 
   constructor(private translate: TranslateService, public platform: Platform, public statusBar: StatusBar,
-              public splashScreen: SplashScreen, private storage: Storage, private globalization: Globalization,
+              public splashScreen: SplashScreen, private storage: Storage,
               private requestProvider: RequestProvider) {
     this.initializeApp();
 
@@ -77,9 +76,7 @@ export class MyApp {
       } else if (this.translate.getBrowserLang() !== undefined) {
         language = this.translate.getBrowserLang();
       } else if ((window as any).cordova) {
-        this.globalization.getPreferredLanguage().then((result) => {
-          language = result.value;
-        });
+          language = navigator.language;
       }
       this.translate.use(language);
       this.requestProvider.setAcceptLanguage(language);

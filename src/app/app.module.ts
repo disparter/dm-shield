@@ -23,8 +23,6 @@ import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader} from "@ngx-translate/http-loader";
 
-import { Globalization} from "@ionic-native/globalization";
-
 import { IonicStorageModule } from "@ionic/storage";
 import { RequestProvider } from "../providers/request/request.provider";
 
@@ -81,7 +79,6 @@ export function createTranslateLoader(http: HttpClient) {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Globalization,
     RequestProvider,
   ],
 })
