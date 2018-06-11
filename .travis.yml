@@ -82,5 +82,4 @@ deploy:
       repo: disparter/dm-shield
 
 after_success:
-  - if: tag is blank
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./deploy-play.sh; fi'
+  - 'if [ "TRAVIS_TAG" = "false" AND "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./deploy-play.sh; fi'
