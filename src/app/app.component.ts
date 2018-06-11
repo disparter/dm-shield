@@ -14,6 +14,7 @@ import {LanguageTypePage} from "../pages/language-types/language-types";
 import {LicensePage} from "../pages/license/license";
 import {MonsterTypePage} from "../pages/monster-types/monster-types";
 import {SenseTypePage} from "../pages/senses-types/sense-types";
+import {SizesPage} from "../pages/sizes/sizes";
 import {SkillTypePage} from "../pages/skill-types/skill-types";
 import {SpeedsPage} from "../pages/speeds/speeds";
 
@@ -37,13 +38,14 @@ export class MyApp {
 
     this.pages = [
       {title: "MENU.HOME", component: HomePage},
+      {title: "MENU.ALIGNMENTS", component: AlignmentsPage},
       {title: "MENU.CONDITIONS", component: ConditionsPage},
       {title: "MENU.DAMAGES", component: DamagesPage},
-      {title: "MENU.MONSTER-TYPES", component: MonsterTypePage},
-      {title: "MENU.SKILL-TYPES", component: SkillTypePage},
-      {title: "MENU.SENSE-TYPES", component: SenseTypePage},
       {title: "MENU.LANGUAGE-TYPES", component: LanguageTypePage},
-      {title: "MENU.ALIGNMENTS", component: AlignmentsPage},
+      {title: "MENU.MONSTER-TYPES", component: MonsterTypePage},
+      {title: "MENU.SENSE-TYPES", component: SenseTypePage},
+      {title: "MENU.SIZES", component: SizesPage},
+      {title: "MENU.SKILL-TYPES", component: SkillTypePage},
       {title: "MENU.SPEEDS", component: SpeedsPage},
       {title: "MENU.LICENSE", component: LicensePage},
     ];

@@ -1,6 +1,6 @@
 {
   "name": "dm-shield",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "An app to index important information about 5e Dungeons and Dragons Edition. Like the Dungeon Master Screen.",
   "private": true,
   "author": "Felipe Faria - Disparter",

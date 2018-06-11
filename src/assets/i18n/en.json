@@ -8,6 +8,7 @@
     "SENSE-TYPES"    : "Senses",
     "LANGUAGE-TYPES" : "Languages",
     "ALIGNMENTS"     : "Alignments",
+    "SIZES"          : "Sizes",
     "SPEEDS"         : "Speed Types",
     "SKILL-TYPES"    : "Skills"
   },
