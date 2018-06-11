@@ -6,6 +6,8 @@
   </ion-header>
 
   <ion-content>
+    <spinner></spinner>
+
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon [name]="p.icon" item-start></ion-icon>
