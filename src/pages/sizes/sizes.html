@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!selectedItem" >{{'MENU.SIZES' | translate}}</ion-title>
+    <ion-title *ngIf="selectedItem" >{{selectedItem.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="!selectedItem" >
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      {{item.name}}
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+     <strong>{{selectedItem.description}}</strong>
+  </div>
+</ion-content>

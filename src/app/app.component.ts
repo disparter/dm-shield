@@ -3,7 +3,6 @@ import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
 import {Nav, Platform} from "ionic-angular";
 
-import {Globalization} from "@ionic-native/globalization";
 import {Storage} from "@ionic/storage";
 import {TranslateService} from "@ngx-translate/core";
 
@@ -15,6 +14,7 @@ import {LanguageTypePage} from "../pages/language-types/language-types";
 import {LicensePage} from "../pages/license/license";
 import {MonsterTypePage} from "../pages/monster-types/monster-types";
 import {SenseTypePage} from "../pages/senses-types/sense-types";
+import {SizesPage} from "../pages/sizes/sizes";
 import {SkillTypePage} from "../pages/skill-types/skill-types";
 import {SpeedsPage} from "../pages/speeds/speeds";
 
@@ -32,19 +32,20 @@ export class MyApp {
   public pages: Array<{ title: any, component: any }>;
 
   constructor(private translate: TranslateService, public platform: Platform, public statusBar: StatusBar,
-              public splashScreen: SplashScreen, private storage: Storage, private globalization: Globalization,
+              public splashScreen: SplashScreen, private storage: Storage,
               private requestProvider: RequestProvider) {
     this.initializeApp();
 
     this.pages = [
       {title: "MENU.HOME", component: HomePage},
+      {title: "MENU.ALIGNMENTS", component: AlignmentsPage},
       {title: "MENU.CONDITIONS", component: ConditionsPage},
       {title: "MENU.DAMAGES", component: DamagesPage},
-      {title: "MENU.MONSTER-TYPES", component: MonsterTypePage},
-      {title: "MENU.SKILL-TYPES", component: SkillTypePage},
-      {title: "MENU.SENSE-TYPES", component: SenseTypePage},
       {title: "MENU.LANGUAGE-TYPES", component: LanguageTypePage},
-      {title: "MENU.ALIGNMENTS", component: AlignmentsPage},
+      {title: "MENU.MONSTER-TYPES", component: MonsterTypePage},
+      {title: "MENU.SENSE-TYPES", component: SenseTypePage},
+      {title: "MENU.SIZES", component: SizesPage},
+      {title: "MENU.SKILL-TYPES", component: SkillTypePage},
       {title: "MENU.SPEEDS", component: SpeedsPage},
       {title: "MENU.LICENSE", component: LicensePage},
     ];
@@ -77,9 +78,7 @@ export class MyApp {
       } else if (this.translate.getBrowserLang() !== undefined) {
         language = this.translate.getBrowserLang();
       } else if ((window as any).cordova) {
-        this.globalization.getPreferredLanguage().then((result) => {
-          language = result.value;
-        });
+          language = navigator.language;
       }
       this.translate.use(language);
       this.requestProvider.setAcceptLanguage(language);

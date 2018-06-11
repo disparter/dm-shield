@@ -10,7 +10,9 @@ import { LanguageTypePage } from "../pages/language-types/language-types";
 import { LicensePage } from "../pages/license/license";
 import { MonsterTypePage } from "../pages/monster-types/monster-types";
 import { SenseTypePage } from "../pages/senses-types/sense-types";
+import { SizesPage } from "../pages/sizes/sizes";
 import { SkillTypePage } from "../pages/skill-types/skill-types";
+
 import { SpeedsPage } from "../pages/speeds/speeds";
 import { MyApp } from "./app.component";
 
@@ -23,8 +25,6 @@ import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader} from "@ngx-translate/http-loader";
 
-import { Globalization} from "@ionic-native/globalization";
-
 import { IonicStorageModule } from "@ionic/storage";
 import { RequestProvider } from "../providers/request/request.provider";
 
@@ -36,28 +36,32 @@ export function createTranslateLoader(http: HttpClient) {
   bootstrap: [IonicApp],
   declarations: [
     MyApp,
-    HomePage,
+
+    AlignmentsPage,
     ConditionsPage,
     DamagesPage,
+    HomePage,
+    LanguageTypePage,
     LicensePage,
     MonsterTypePage,
-    SkillTypePage,
     SenseTypePage,
-    LanguageTypePage,
-    AlignmentsPage,
+    SizesPage,
+    SkillTypePage,
     SpeedsPage,
   ],
   entryComponents: [
     MyApp,
-    HomePage,
+
+    AlignmentsPage,
     ConditionsPage,
     DamagesPage,
+    HomePage,
+    LanguageTypePage,
     LicensePage,
     MonsterTypePage,
-    SkillTypePage,
     SenseTypePage,
-    LanguageTypePage,
-    AlignmentsPage,
+    SizesPage,
+    SkillTypePage,
     SpeedsPage,
   ],
   imports: [
@@ -81,7 +85,6 @@ export function createTranslateLoader(http: HttpClient) {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Globalization,
     RequestProvider,
   ],
 })

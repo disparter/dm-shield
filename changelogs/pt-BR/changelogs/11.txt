@@ -1,0 +1,2 @@
+﻿Criado catálogo de tamanhos
+Reordenado menu para ordem alfabética americana
