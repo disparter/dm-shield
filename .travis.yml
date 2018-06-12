@@ -2,7 +2,7 @@ sudo: false
 
 language: objective-c
 os: osx
-osx_image: xcode9.2
+osx_image: xcode9.3
 xcode_project: platforms/ios/dm-shield.xcodeproj
 
 cache: false
@@ -86,9 +86,6 @@ deploy:
     bucket: dm-shield
     local-dir: www
     acl: public_read
-    on:
-      repo: disparter/dm-shield
-      tags: true
 
 after_success:
   # Perform code coverage
