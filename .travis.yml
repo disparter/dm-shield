@@ -70,7 +70,7 @@ script:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: deploy-play.sh
+    script: chmod +x ./deploy-play.sh && ./deploy-play.sh
     on:
       tags: true
 
