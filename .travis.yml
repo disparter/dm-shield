@@ -74,8 +74,9 @@ script:
 deploy:
   - provider: script
     skip_cleanup: true
-    if: tag is blank
     script: deploy-play.sh
+    on:
+      tags: true
 
   - provider: s3
     skip_cleanup: true
