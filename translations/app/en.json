@@ -1,0 +1,9 @@
+{
+  "config_ios" : {
+    "CFBundleDisplayName": "DM's Shield",
+    "CFBundleName": "DM's Shield"
+  },
+  "config_android" : {
+    "app_name": "DM's Shield"
+  }
+}
