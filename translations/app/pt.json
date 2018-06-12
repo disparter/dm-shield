@@ -1,0 +1,9 @@
+{
+  "config_ios" : {
+    "CFBundleDisplayName": "Escudo do Mestre",
+    "CFBundleName": "Escudo do Mestre"
+  },
+  "config_android" : {
+    "app_name": "Escudo do Mestre"
+  }
+}
