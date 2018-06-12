@@ -2,7 +2,7 @@ sudo: false
 
 language: objective-c
 os: osx
-osx_image: xcode9.3
+osx_image: xcode9.2
 xcode_project: platforms/ios/dm-shield.xcodeproj
 
 cache: false
@@ -76,8 +76,6 @@ deploy:
     skip_cleanup: true
     if: tag is blank
     script: deploy-play.sh
-    on:
-      branch: master
 
   - provider: s3
     skip_cleanup: true
