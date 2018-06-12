@@ -57,6 +57,9 @@ install:
   # install cordova and ionic
   - npm install -g cordova@latest ionic
 
+  # install codecov
+  - npm install codecov -g
+
 script:
   # ionic build
   - ionic cordova platform remove android
@@ -67,10 +70,6 @@ script:
 
   # xcode build
   - xcodebuild -project platforms/ios/dm-shield.xcodeproj -scheme dm-shield -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
-
-  # sonar
-  - sonar-scanner
-
 
 deploy:
   - provider: script
@@ -91,3 +90,8 @@ deploy:
     on:
       repo: disparter/dm-shield
       tags: true
+
+after_success:
+  # Perform code coverage
+  - codecov
+  - sonar-scanner
