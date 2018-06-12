@@ -38,35 +38,39 @@ before_install:
   - unzip -qq gapi-files.zip
 
 install:
-    - nvm use 8.11.2
+  - nvm use 8.11.2
 
-    # install android SDK
-    -  mkdir ~/.android/
-    -  touch ~/.android/repositories.cfg
-    -  mkdir android-sdk
-    -  cd android-sdk
-    -  export ANDROID_HOME=$(pwd)
-    -  wget http://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip
-    -  unzip -qq sdk-tools-darwin-3859397.zip
-    -  yes | ./tools/bin/sdkmanager --licenses
-    -  yes | ./tools/bin/sdkmanager "platform-tools" "build-tools;27.0.3"
+  # install android SDK
+  -  mkdir ~/.android/
+  -  touch ~/.android/repositories.cfg
+  -  mkdir android-sdk
+  -  cd android-sdk
+  -  export ANDROID_HOME=$(pwd)
+  -  wget http://dl.google.com/android/repository/sdk-tools-darwin-3859397.zip
+  -  unzip -qq sdk-tools-darwin-3859397.zip
+  -  yes | ./tools/bin/sdkmanager --licenses
+  -  yes | ./tools/bin/sdkmanager "platform-tools" "build-tools;27.0.3"
 
-    -  export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/27.0.3
-    -  cd ..
+  -  export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/27.0.3
+  -  cd ..
 
-    # ionic build
-    - npm install -g cordova@latest ionic
-
-    # build
-    - ionic cordova platform remove android
-    - ionic cordova platform add android
-    - ionic info
-    - ionic cordova build android --release
-    - ionic cordova build ios --device --release
+  # install cordova and ionic
+  - npm install -g cordova@latest ionic
 
 script:
-  - sonar-scanner
+  # ionic build
+  - ionic cordova platform remove android
+  - ionic cordova platform add android
+  - ionic info
+  - ionic cordova build android --release
+  - ionic cordova build ios --device --release
+
+  # xcode build
   - xcodebuild -project platforms/ios/dm-shield.xcodeproj -scheme dm-shield -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+
+  # sonar
+  - sonar-scanner
+
 
 deploy:
   - provider: script
