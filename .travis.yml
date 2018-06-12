@@ -82,6 +82,8 @@ deploy:
     bucket: dm-shield
     local-dir: www
     acl: public_read
+    on:
+      tags: false
 
 after_success:
   # Perform code coverage
