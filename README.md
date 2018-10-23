@@ -36,4 +36,4 @@
 [![GitHub issues](https://img.shields.io/github/issues/disparter/dm-shield.svg)](https://github.com/disparter/dm-shield/issues)
 
 ### Chat with us
-[![Slack Status](https://slackin-spmjccuffh.now.sh//badge.svg)](https://slackin-spmjccuffh.now.sh/)
+[![Slack Status](https://slackin-spmjccuffh.now.sh/badge.svg)](https://slackin-spmjccuffh.now.sh/)
