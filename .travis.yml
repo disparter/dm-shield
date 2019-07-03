@@ -68,20 +68,22 @@ script:
   - xcodebuild -project platforms/ios/dm-shield.xcodeproj -scheme dm-shield -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: chmod +x ./deploy-play.sh && ./deploy-play.sh
-    on:
-      tags: true
-
-  - provider: s3
-    skip_cleanup: true
-    access_key_id: AKIAI4ITKWYU4OTSL55A
-    secret_access_key:
-      secure: RMYyFdQS0aURUvrMl/RzoEVT5lP2B0WWi4Wcn0zzMiuj/oNcs1w44lWAORV43A1x/VDu/QuHZrW0HQa7c2xiMeYsUI6ge3EbxkGA7iLpVUtOVaLJ8v7p7qXRicXHGzsYBUNulgdanRHbrB497KTle6Pjmj0Hyc9phCyDGsZJvfVTWPi499ofBs/iyorK0m1e3sFXDaEIXp9LvWR3byn7btYLvBeXl9jIvd7IosyhvCxwKMtclcmE9wCbogMswiSsDGAMCbFDSPfacfV8ddmt8upME1/e6EoAt0zzPvcJw0o9ddL1HyTVjII0FLMYkvwKVts0sJJypo5vjNMoM1sjLJBso3aV+z5jRE2MJvDwqq55pzKK+99HUaQhNw+D6i/gLHp1knykPmlKLicWufO3HG8MYA8vesotpWoj0pdEUWQ1s7kzWU1ejqFCzEwWqN77UYL+1tri5YT6AkuD3WEpuYfUoY1ewXENC4ZphiGBGWlx7kwDolyTlTA43cdjr0Loi9Pxn2bA1HNxtJbR2YOL/1OKp5q3ULfg9q/zZ+rzyMnqTFgvcjbv7Feknvo7nRt8ZUAP7rCaTTCMNlv6kPPABNOij3mEgFhosd+k4yAi0xejNvk8xlKR3dZb7NHrtugs90P7BpGP7cj5Obgy5VPImUS4cqodwuiA5ao7EzKBtLk=
-    bucket: dm-shield
-    local-dir: www
-    acl: public_read
+  matrix:
+    - provider: script
+      skip_cleanup: true
+      script: chmod +x ./deploy-play.sh && ./deploy-play.sh
+      on:
+        tags: true
+    - provider: s3
+      skip_cleanup: true
+      access_key_id: AKIAI4ITKWYU4OTSL55A
+      secret_access_key:
+        secure: RMYyFdQS0aURUvrMl/RzoEVT5lP2B0WWi4Wcn0zzMiuj/oNcs1w44lWAORV43A1x/VDu/QuHZrW0HQa7c2xiMeYsUI6ge3EbxkGA7iLpVUtOVaLJ8v7p7qXRicXHGzsYBUNulgdanRHbrB497KTle6Pjmj0Hyc9phCyDGsZJvfVTWPi499ofBs/iyorK0m1e3sFXDaEIXp9LvWR3byn7btYLvBeXl9jIvd7IosyhvCxwKMtclcmE9wCbogMswiSsDGAMCbFDSPfacfV8ddmt8upME1/e6EoAt0zzPvcJw0o9ddL1HyTVjII0FLMYkvwKVts0sJJypo5vjNMoM1sjLJBso3aV+z5jRE2MJvDwqq55pzKK+99HUaQhNw+D6i/gLHp1knykPmlKLicWufO3HG8MYA8vesotpWoj0pdEUWQ1s7kzWU1ejqFCzEwWqN77UYL+1tri5YT6AkuD3WEpuYfUoY1ewXENC4ZphiGBGWlx7kwDolyTlTA43cdjr0Loi9Pxn2bA1HNxtJbR2YOL/1OKp5q3ULfg9q/zZ+rzyMnqTFgvcjbv7Feknvo7nRt8ZUAP7rCaTTCMNlv6kPPABNOij3mEgFhosd+k4yAi0xejNvk8xlKR3dZb7NHrtugs90P7BpGP7cj5Obgy5VPImUS4cqodwuiA5ao7EzKBtLk=
+      bucket: dm-shield
+      local-dir: www
+      acl: public_read
+      on:
+        tags: false
 
 after_success:
   # Perform code coverage
